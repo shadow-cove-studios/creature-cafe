@@ -10,7 +10,3 @@ anchor_mode = 0
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(535, 244)
 texture = ExtResource("1_n1xa0")
-
-[node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(161, 293)
-texture = ExtResource("1_n1xa0")
