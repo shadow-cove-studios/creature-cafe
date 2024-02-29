@@ -1,2 +1,2 @@
 # creature-cafe
-##the game about creatures and cafes
+## the game about creatures and cafes
