@@ -1,2 +1,3 @@
 # creature-cafe
-## the game about creatures and cafes
+## the game about creatures and cooking.
+(and throwing your life away looting things)
