@@ -29,6 +29,7 @@ size = Vector2(618.687, 308.591)
 anchor_mode = 0
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(514, 301)
 script = SubResource("GDScript_4xwlp")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
