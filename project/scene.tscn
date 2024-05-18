@@ -6,7 +6,7 @@
 resource_name = "hi"
 script/source = "extends CharacterBody2D
 
-@export var speed = 400
+@export var speed = 500
 
 func get_input():
 	var input_direction = Input.get_vector(\"left\", \"right\", \"up\", \"down\")
@@ -20,8 +20,8 @@ func _physics_process(_delta):
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6fy6h"]
 size = Vector2(128, 129)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ew08a"]
-size = Vector2(618.687, 308.591)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m8jds"]
+size = Vector2(122.683, 125.799)
 
 [node name="Node2D" type="Node2D"]
 
@@ -41,11 +41,13 @@ position = Vector2(534, 242.5)
 shape = SubResource("RectangleShape2D_6fy6h")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-7, 631)
+position = Vector2(570, 401)
 rotation = 0.932992
 scale = Vector2(2.30729, 1.93423)
 texture = ExtResource("1_n1xa0")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D"]
-scale = Vector2(0.225334, 0.408122)
-shape = SubResource("RectangleShape2D_ew08a")
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/StaticBody2D"]
+position = Vector2(-0.438343, -1.03104)
+shape = SubResource("RectangleShape2D_m8jds")
