@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://c62i8nchocpjg"]
+[gd_scene load_steps=6 format=3 uid="uid://c62i8nchocpjg"]
 
 [ext_resource type="Texture2D" uid="uid://cfv7tt6h0a2ix" path="res://icon.svg" id="1_n1xa0"]
+[ext_resource type="Texture2D" uid="uid://c3um7yfas7w3n" path="res://pkmn firered background.png" id="2_luybu"]
 
 [sub_resource type="GDScript" id="GDScript_4xwlp"]
 resource_name = "hi"
@@ -10,17 +11,17 @@ script/source = "extends CharacterBody2D
 ## A walking script, originally copy and pasted from the tutorial below,
 ## but it only worked on the x axis, and i then copy and pasted from a commment on the vid.
 ##
-## @original tutorial:              https://www.youtube.com/watch?v=KceMokK2qFA
-## @Commenter that i copied from:   marcosmachado6844
+## original tutorial:              https://www.youtube.com/watch?v=KceMokK2qFA
+## Commenter that i copied from:   marcosmachado6844
 
-## @prototypeBuild
-@export var speed = 500
+## prototypeBuild
+@export var walkSpeed = 230 #self exlpanitory, the speed of wich the character walks.
 
-func get_input():
-	var input_direction = Input.get_vector(\"left\", \"right\", \"up\", \"down\")
-	velocity = input_direction * speed
+func get_input():#this functiun recives input and changes the character's velocity in effect
+	var input_direction = Input.get_vector(\"left\", \"right\", \"up\", \"down\") ##This variable recives the input of the keyboard,
+	velocity = input_direction * walkSpeed
 
-func _physics_process(_delta):
+func _physics_process(_delta): #this function actually makes your guy move :)
 	get_input()
 	move_and_slide()
 "
@@ -31,31 +32,131 @@ size = Vector2(128, 129)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m8jds"]
 size = Vector2(122.683, 125.799)
 
-[node name="Node2D" type="Node2D"]
+[node name="Overworld" type="Node2D"]
 
-[node name="Camera2D" type="Camera2D" parent="."]
-anchor_mode = 0
-
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-position = Vector2(514, 301)
+[node name="Player" type="CharacterBody2D" parent="."]
+z_index = 2
+position = Vector2(1185, 376)
+scale = Vector2(0.33, 0.33)
 script = SubResource("GDScript_4xwlp")
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
 position = Vector2(535, 244)
 texture = ExtResource("1_n1xa0")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 position = Vector2(534, 242.5)
 shape = SubResource("RectangleShape2D_6fy6h")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(570, 401)
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
+position = Vector2(-500, -276)
+remote_path = NodePath("../../Camera2D")
+
+[node name="RandomGodotLogo" type="Sprite2D" parent="."]
+position = Vector2(376, -168)
 rotation = 0.932992
-scale = Vector2(2.30729, 1.93423)
+scale = Vector2(2.23463, 1.93423)
 texture = ExtResource("1_n1xa0")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D"]
+[node name="StaticBody2D" type="StaticBody2D" parent="RandomGodotLogo"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RandomGodotLogo/StaticBody2D"]
 position = Vector2(-0.438343, -1.03104)
 shape = SubResource("RectangleShape2D_m8jds")
+
+[node name="PkmnFireredBackground" type="Sprite2D" parent="."]
+z_index = -4
+position = Vector2(814.75, 562.875)
+scale = Vector2(3.2041, 3.04133)
+texture = ExtResource("2_luybu")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(1020, 284.92)
+scale = Vector2(0.33, 0.33)
+anchor_mode = 0
+zoom = Vector2(1.42, 1.42)
+limit_left = 0
+limit_top = 0
+limit_right = 1636
+limit_bottom = 1120
+limit_smoothed = true
+position_smoothing_enabled = true
+position_smoothing_speed = 3.5
+
+[node name="WorldCollisions" type="StaticBody2D" parent="."]
+
+[node name="Mound 1" type="StaticBody2D" parent="WorldCollisions"]
+
+[node name="East walls" type="CollisionPolygon2D" parent="WorldCollisions/Mound 1"]
+polygon = PackedVector2Array(1164, 529, 1160, 601, 1241, 609, 1241, 766, 773, 774, 771, 855, 897, 858, 899, 889, 738, 889, 733, 807, 773, 769, 1211, 768, 1213, 641, 1116, 642, 1112, 563)
+
+[node name="North walls" type="CollisionPolygon2D" parent="WorldCollisions/Mound 1"]
+polygon = PackedVector2Array(1159, 522, 1559, 522, 1586, 545, 1590, 629, 1555, 638, 1476, 640, 1477, 606, 1555, 603, 1558, 522)
+
+[node name="South walls" type="CollisionPolygon2D" parent="WorldCollisions/Mound 1"]
+position = Vector2(2, 1)
+polygon = PackedVector2Array(992, 855, 1201, 855, 1205, 893, 993, 891)
+
+[node name="West walls" type="CollisionPolygon2D" parent="WorldCollisions/Mound 1"]
+polygon = PackedVector2Array(1298, 857, 1298, 890, 1366, 889, 1372, 879, 1374, 642, 1379, 637, 1376, 607, 1347, 604, 1343, 853)
+
+[node name="Mound2" type="StaticBody2D" parent="WorldCollisions"]
+
+[node name="East wall" type="CollisionPolygon2D" parent="WorldCollisions/Mound2"]
+polygon = PackedVector2Array(633, 190, 1117, 190, 1127, 191, 1128, 305, 1128, 314, 1080, 315, 1080, 351, 1151, 348, 1159, 341, 1159, 226, 1127, 189)
+
+[node name="West wall" type="CollisionPolygon2D" parent="WorldCollisions/Mound2"]
+polygon = PackedVector2Array(636, 192, 635, 308, 636, 314, 679, 315, 678, 347, 613, 347, 604, 331, 604, 227)
+
+[node name="South wall" type="CollisionPolygon2D" parent="WorldCollisions/Mound2"]
+polygon = PackedVector2Array(775, 316, 775, 350, 985, 352, 986, 316)
+
+[node name="Lake" type="StaticBody2D" parent="WorldCollisions"]
+
+[node name="Lake" type="CollisionPolygon2D" parent="WorldCollisions/Lake"]
+polygon = PackedVector2Array(784, 437, 772, 450, 772, 548, 785, 559, 1027, 559, 1033, 564, 1033, 643, 784, 649, 774, 660, 777, 716, 788, 727, 1196, 728, 1206, 711, 1207, 645, 1117, 645, 1114, 564, 1160, 531, 1157, 526, 1202, 520, 1207, 452, 1189, 440)
+
+[node name="Saplings" type="StaticBody2D" parent="WorldCollisions"]
+
+[node name="Saplings1" type="CollisionPolygon2D" parent="WorldCollisions/Saplings"]
+polygon = PackedVector2Array(-6, 854, 502, 849, 510, 848, 509, 935, 887, 938, 1033, 939, 1033, 893, 1078, 895, 1076, 967, 1075, 975, 472, 978, 422, 978, 422, 937, 464, 938, 466, 893, -7, 897)
+
+[node name="Saplings2" type="CollisionPolygon2D" parent="WorldCollisions/Saplings"]
+polygon = PackedVector2Array(-9, 144, -7, 151, 2, 148, 414, 148, 416, 182, 415, 186, -5, 187)
+
+[node name="Saplings3" type="CollisionPolygon2D" parent="WorldCollisions/Saplings"]
+polygon = PackedVector2Array(-9, 273, 585, 272, 591, 277, 593, 296, 594, 308, -13, 307)
+
+[node name="Trees" type="StaticBody2D" parent="WorldCollisions"]
+
+[node name="Trees" type="CollisionPolygon2D" parent="WorldCollisions/Trees"]
+polygon = PackedVector2Array(14, 840, -8, 839, 406, 843, 417, 843, 423, 729, 423, 715, 156, 713, 158, 307, -19, 307, -8, 836)
+
+[node name="border" type="StaticBody2D" parent="WorldCollisions"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="WorldCollisions/border"]
+polygon = PackedVector2Array(-11, 990, -9, 978, 29, 979, 26, 1056, 64, 1044, 1599, 1054, 1599, 46, 28, 57, 15, 122, -5, 130, -7, 145, -10, 274, -13, 1007, -88, 962, -53, -86, 1630, -72, 1717, -32, 1731, 1199, -16, 1236)
+
+[node name="Rock" type="StaticBody2D" parent="WorldCollisions"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="WorldCollisions/Rock"]
+polygon = PackedVector2Array(818, 353, 817, 430, 828, 437, 896, 436, 901, 435, 902, 391, 903, 356)
+
+[node name="Building" type="StaticBody2D" parent="WorldCollisions"]
+position = Vector2(1447, 354)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="WorldCollisions/Building"]
+polygon = PackedVector2Array(-104, -61, -106, 77, 106, 79, 108, -58)
+
+[node name="Pokeballs" type="StaticBody2D" parent="WorldCollisions"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="WorldCollisions/Pokeballs"]
+polygon = PackedVector2Array(1230, 529, 1214, 530, 1216, 556, 1216, 560, 1245, 561, 1244, 529)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="WorldCollisions/Pokeballs"]
+position = Vector2(44, -82)
+polygon = PackedVector2Array(1230, 529, 1214, 530, 1216, 556, 1216, 560, 1245, 561, 1244, 529)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="WorldCollisions/Pokeballs"]
+position = Vector2(-1006, -205)
+polygon = PackedVector2Array(1230, 529, 1214, 530, 1216, 556, 1216, 560, 1245, 561, 1244, 529)
