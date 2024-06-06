@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://c62i8nchocpjg"]
+[gd_scene load_steps=9 format=3 uid="uid://c62i8nchocpjg"]
 
 [ext_resource type="Texture2D" uid="uid://cfv7tt6h0a2ix" path="res://icon.svg" id="1_n1xa0"]
 [ext_resource type="Texture2D" uid="uid://c3um7yfas7w3n" path="res://pkmn firered background.png" id="2_luybu"]
+[ext_resource type="Texture2D" uid="uid://x6e1i2y3ycod" path="res://hole.png" id="3_qewj3"]
+[ext_resource type="Script" path="res://Hole.gd" id="3_w0w3w"]
 
 [sub_resource type="GDScript" id="GDScript_4xwlp"]
 resource_name = "hi"
@@ -32,9 +34,12 @@ size = Vector2(128, 129)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m8jds"]
 size = Vector2(122.683, 125.799)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_houya"]
+size = Vector2(18.5323, 119.173)
+
 [node name="Overworld" type="Node2D"]
 
-[node name="Player" type="CharacterBody2D" parent="."]
+[node name="Player" type="CharacterBody2D" parent="." groups=["teleportableObjects"]]
 z_index = 2
 position = Vector2(1185, 376)
 scale = Vector2(0.33, 0.33)
@@ -61,7 +66,7 @@ texture = ExtResource("1_n1xa0")
 [node name="StaticBody2D" type="StaticBody2D" parent="RandomGodotLogo"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RandomGodotLogo/StaticBody2D"]
-position = Vector2(-0.438343, -1.03104)
+position = Vector2(1.48018, -8.38531)
 shape = SubResource("RectangleShape2D_m8jds")
 
 [node name="PkmnFireredBackground" type="Sprite2D" parent="."]
@@ -160,3 +165,20 @@ polygon = PackedVector2Array(1230, 529, 1214, 530, 1216, 556, 1216, 560, 1245, 5
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="WorldCollisions/Pokeballs"]
 position = Vector2(-1006, -205)
 polygon = PackedVector2Array(1230, 529, 1214, 530, 1216, 556, 1216, 560, 1245, 561, 1244, 529)
+
+[node name="Hole" type="Area2D" parent="."]
+position = Vector2(32, 946)
+script = ExtResource("3_w0w3w")
+
+[node name="HoleSprite" type="Sprite2D" parent="Hole"]
+position = Vector2(-1, -6.00006)
+rotation = -1.5651
+scale = Vector2(0.203725, 0.171946)
+texture = ExtResource("3_qewj3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hole"]
+position = Vector2(-1, -5)
+scale = Vector2(4.10094, 0.771988)
+shape = SubResource("RectangleShape2D_houya")
+
+[connection signal="body_entered" from="Hole" to="Hole" method="_on_body_entered"]
