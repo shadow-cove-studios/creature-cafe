@@ -1,3 +1,84 @@
-[gd_scene format=3 uid="uid://c3tgm0sbtnp54"]
+[gd_scene load_steps=7 format=3 uid="uid://c3tgm0sbtnp54"]
+
+[ext_resource type="Script" path="res://exit.gd" id="1_dy3h2"]
+[ext_resource type="Texture2D" uid="uid://x6e1i2y3ycod" path="res://hole.png" id="2_y1bsl"]
+[ext_resource type="Texture2D" uid="uid://cfv7tt6h0a2ix" path="res://icon.svg" id="3_cwkay"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k3i51"]
+size = Vector2(18.5323, 119.173)
+
+[sub_resource type="GDScript" id="GDScript_j8it2"]
+resource_name = "hi"
+script/source = "extends CharacterBody2D
+## Walking script.
+##
+## A walking script, originally copy and pasted from the tutorial below,
+## but it only worked on the x axis, and i then copy and pasted from a commment on the vid.
+##
+## original tutorial:              https://www.youtube.com/watch?v=KceMokK2qFA
+## Commenter that i copied from:   marcosmachado6844
+
+## prototypeBuild
+@export var walkSpeed = 230 #self exlpanitory, the speed of wich the character walks.
+
+func get_input():#this functiun recives input and changes the character's velocity in effect
+	var input_direction = Input.get_vector(\"left\", \"right\", \"up\", \"down\") ##This variable recives the input of the keyboard,
+	velocity = input_direction * walkSpeed
+
+func _physics_process(_delta): #this function actually makes your guy move :)
+	get_input()
+	move_and_slide()
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xw3jq"]
+size = Vector2(128, 129)
 
 [node name="Node2D" type="Node2D"]
+
+[node name="Hole" type="Area2D" parent="."]
+position = Vector2(32, 946)
+script = ExtResource("1_dy3h2")
+
+[node name="HoleSprite" type="Sprite2D" parent="Hole"]
+position = Vector2(-1, -6.00006)
+rotation = -1.5651
+scale = Vector2(0.203725, 0.171946)
+texture = ExtResource("2_y1bsl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hole"]
+position = Vector2(-1, -5)
+scale = Vector2(4.10094, 0.771988)
+shape = SubResource("RectangleShape2D_k3i51")
+
+[node name="Player" type="CharacterBody2D" parent="Hole" groups=["teleportableObjects"]]
+z_index = 2
+position = Vector2(48.0001, -190)
+scale = Vector2(0.33, 0.33)
+script = SubResource("GDScript_j8it2")
+
+[node name="Sprite2D" type="Sprite2D" parent="Hole/Player"]
+position = Vector2(535, 244)
+texture = ExtResource("3_cwkay")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hole/Player"]
+position = Vector2(534, 242.5)
+shape = SubResource("RectangleShape2D_xw3jq")
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Hole/Player"]
+position = Vector2(-500, -276)
+remote_path = NodePath("../../Camera2D")
+
+[node name="Camera2D" type="Camera2D" parent="Hole"]
+position = Vector2(-117, -281.08)
+scale = Vector2(0.33, 0.33)
+anchor_mode = 0
+zoom = Vector2(1.42, 1.42)
+limit_left = 0
+limit_top = 0
+limit_right = 1636
+limit_bottom = 1120
+limit_smoothed = true
+position_smoothing_enabled = true
+position_smoothing_speed = 3.5
+
+[connection signal="body_entered" from="Hole" to="Hole" method="_on_body_entered"]

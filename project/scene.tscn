@@ -41,7 +41,7 @@ size = Vector2(18.5323, 119.173)
 
 [node name="Player" type="CharacterBody2D" parent="." groups=["teleportableObjects"]]
 z_index = 2
-position = Vector2(1185, 376)
+position = Vector2(337, 920.08)
 scale = Vector2(0.33, 0.33)
 script = SubResource("GDScript_4xwlp")
 
@@ -76,7 +76,7 @@ scale = Vector2(3.2041, 3.04133)
 texture = ExtResource("2_luybu")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(1020, 284.92)
+position = Vector2(172, 829)
 scale = Vector2(0.33, 0.33)
 anchor_mode = 0
 zoom = Vector2(1.42, 1.42)
