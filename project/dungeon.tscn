@@ -43,6 +43,7 @@ size = Vector2(128, 129)
 z_index = -4
 
 [node name="Exit" type="Area2D" parent="."]
+visible = false
 position = Vector2(48, 442)
 script = ExtResource("1_dy3h2")
 
@@ -73,6 +74,7 @@ position_smoothing_enabled = true
 position_smoothing_speed = 3.5
 
 [node name="Player" type="CharacterBody2D" parent="." groups=["teleportableObjects"]]
+visible = false
 z_index = 10
 position = Vector2(57, 272)
 scale = Vector2(0.33, 0.33)
@@ -1009,7 +1011,6 @@ texture = ExtResource("6_1fasl")
 [node name="WallLeft5" type="Sprite2D" parent="Map parts"]
 z_index = -4
 position = Vector2(544, 96)
-scale = Vector2(1, 1)
 texture = ExtResource("4_jq210")
 
 [node name="WallDown2" type="Sprite2D" parent="Map parts"]
