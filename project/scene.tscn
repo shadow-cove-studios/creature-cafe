@@ -2,8 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://cfv7tt6h0a2ix" path="res://icon.svg" id="1_n1xa0"]
 [ext_resource type="Texture2D" uid="uid://c3um7yfas7w3n" path="res://pkmn firered background.png" id="2_luybu"]
-[ext_resource type="Texture2D" uid="uid://x6e1i2y3ycod" path="res://hole.png" id="3_qewj3"]
 [ext_resource type="Script" path="res://Hole.gd" id="3_w0w3w"]
+[ext_resource type="Texture2D" uid="uid://cpdtikgycjma8" path="res://cave entrance.png" id="4_rmsjs"]
 
 [sub_resource type="GDScript" id="GDScript_4xwlp"]
 resource_name = "hi"
@@ -171,13 +171,13 @@ position = Vector2(32, 946)
 script = ExtResource("3_w0w3w")
 
 [node name="HoleSprite" type="Sprite2D" parent="Hole"]
-position = Vector2(-1, -6.00006)
+position = Vector2(-15, -6.00001)
 rotation = -1.5651
-scale = Vector2(0.203725, 0.171946)
-texture = ExtResource("3_qewj3")
+scale = Vector2(1.3835, 1.17186)
+texture = ExtResource("4_rmsjs")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hole"]
-position = Vector2(-1, -5)
+position = Vector2(-31, -7)
 scale = Vector2(4.10094, 0.771988)
 shape = SubResource("RectangleShape2D_houya")
 

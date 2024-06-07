@@ -1,8 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://c3tgm0sbtnp54"]
+[gd_scene load_steps=13 format=3 uid="uid://c3tgm0sbtnp54"]
 
 [ext_resource type="Script" path="res://exit.gd" id="1_dy3h2"]
-[ext_resource type="Texture2D" uid="uid://x6e1i2y3ycod" path="res://hole.png" id="2_y1bsl"]
+[ext_resource type="Texture2D" uid="uid://kn4irxp17axg" path="res://cave exit.png" id="2_yho7c"]
 [ext_resource type="Texture2D" uid="uid://cfv7tt6h0a2ix" path="res://icon.svg" id="3_cwkay"]
+[ext_resource type="Texture2D" uid="uid://c88n4h6ctoa42" path="res://wall_left.png" id="4_jq210"]
+[ext_resource type="Texture2D" uid="uid://doq7iftbcxugn" path="res://wall_up.png" id="5_1tig8"]
+[ext_resource type="Texture2D" uid="uid://drqo2w4xcgtjk" path="res://wall_down.png" id="6_1fasl"]
+[ext_resource type="Texture2D" uid="uid://djgekr1bdtjjh" path="res://floor-.png" id="7_7wbkd"]
+[ext_resource type="Texture2D" uid="uid://cx4ckjcepamwj" path="res://wall_right.png" id="8_eku4m"]
+[ext_resource type="Texture2D" uid="uid://cpdtikgycjma8" path="res://cave entrance.png" id="9_g6mpx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k3i51"]
 size = Vector2(18.5323, 119.173)
@@ -34,42 +40,27 @@ func _physics_process(_delta): #this function actually makes your guy move :)
 size = Vector2(128, 129)
 
 [node name="Node2D" type="Node2D"]
+z_index = -4
 
-[node name="Hole" type="Area2D" parent="."]
-position = Vector2(32, 946)
+[node name="Exit" type="Area2D" parent="."]
+position = Vector2(48, 442)
 script = ExtResource("1_dy3h2")
 
-[node name="HoleSprite" type="Sprite2D" parent="Hole"]
-position = Vector2(-1, -6.00006)
+[node name="HoleSprite" type="Sprite2D" parent="Exit"]
+position = Vector2(-7, -79)
 rotation = -1.5651
-scale = Vector2(0.203725, 0.171946)
-texture = ExtResource("2_y1bsl")
+scale = Vector2(1.46856, 1.19618)
+texture = ExtResource("2_yho7c")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hole"]
-position = Vector2(-1, -5)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Exit"]
+editor_description = "The exit leading to floor1"
+z_index = -4
+position = Vector2(-6, -79)
 scale = Vector2(4.10094, 0.771988)
 shape = SubResource("RectangleShape2D_k3i51")
 
-[node name="Player" type="CharacterBody2D" parent="Hole" groups=["teleportableObjects"]]
-z_index = 2
-position = Vector2(48.0001, -190)
-scale = Vector2(0.33, 0.33)
-script = SubResource("GDScript_j8it2")
-
-[node name="Sprite2D" type="Sprite2D" parent="Hole/Player"]
-position = Vector2(535, 244)
-texture = ExtResource("3_cwkay")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hole/Player"]
-position = Vector2(534, 242.5)
-shape = SubResource("RectangleShape2D_xw3jq")
-
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Hole/Player"]
-position = Vector2(-500, -276)
-remote_path = NodePath("../../Camera2D")
-
-[node name="Camera2D" type="Camera2D" parent="Hole"]
-position = Vector2(-117, -281.08)
+[node name="Camera2D" type="Camera2D" parent="Exit"]
+position = Vector2(-156, -261.08)
 scale = Vector2(0.33, 0.33)
 anchor_mode = 0
 zoom = Vector2(1.42, 1.42)
@@ -81,4 +72,1095 @@ limit_smoothed = true
 position_smoothing_enabled = true
 position_smoothing_speed = 3.5
 
-[connection signal="body_entered" from="Hole" to="Hole" method="_on_body_entered"]
+[node name="Player" type="CharacterBody2D" parent="." groups=["teleportableObjects"]]
+z_index = 10
+position = Vector2(57, 272)
+scale = Vector2(0.33, 0.33)
+script = SubResource("GDScript_j8it2")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+z_index = -4
+position = Vector2(535, 244)
+texture = ExtResource("3_cwkay")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+z_index = -4
+position = Vector2(534, 242.5)
+shape = SubResource("RectangleShape2D_xw3jq")
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
+position = Vector2(-500, -276)
+remote_path = NodePath("../../Exit/Camera2D")
+
+[node name="Map parts" type="Sprite2D" parent="."]
+
+[node name="Floor-6" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(97, 96)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-7" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(161, 96)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-8" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(97, 160)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-5" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(161, 160)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-2" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(225, 95)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-3" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(289, 95)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-4" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(225, 159)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-9" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(289, 159)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-10" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(97, 224)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-11" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(161, 224)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-12" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(97, 288)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-13" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(161, 288)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-14" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(97, 224)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-15" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(161, 224)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-16" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(97, 288)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-17" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(161, 288)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-18" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(97, 224)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-19" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(161, 224)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-20" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(94, 288)
+scale = Vector2(1.09375, 1)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-21" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(161, 288)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-22" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(97, 352)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-23" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(161, 352)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-24" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(97, 416)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-25" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(161, 416)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-26" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(353, 223)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-27" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(417, 223)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-28" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(353, 287)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-29" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(417, 287)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-34" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(353, 223)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-35" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(417, 223)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-36" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(353, 287)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-37" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(417, 287)
+scale = Vector2(1.05957, 0.138102)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-38" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(417, 351)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-39" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(481, 352)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-40" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(418, 415)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-41" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(544, 417)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-50" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(482, 416)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-51" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(613, 416)
+scale = Vector2(1.15625, 1)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-52" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(544, 479)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-53" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(609, 479)
+scale = Vector2(1.03125, 1)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-60" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(545, 542)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-61" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(609.5, 542)
+scale = Vector2(1.01563, 1)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-42" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(545, 289)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-43" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(610, 289)
+scale = Vector2(1.03125, 1)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-44" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(545, 353)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-45" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(610.5, 353)
+scale = Vector2(1.04688, 1)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-46" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(544, 161)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-47" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(610.5, 161)
+scale = Vector2(1.07813, 1)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-48" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(544, 225)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-49" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(610.5, 225)
+scale = Vector2(1.07813, 1)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-93" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(673, 97)
+scale = Vector2(1.03125, 1.0625)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-94" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(738, 97.5)
+scale = Vector2(1, 1.04688)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-95" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(674, 163)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-96" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(738, 163)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-97" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(674, 483)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-98" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(738, 483)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-99" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(674, 547)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-100" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(738, 547)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-101" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(674, 355)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-102" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(738, 355)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-103" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(674, 419)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-104" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(738, 419)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-105" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(674, 226)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-106" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(738, 226)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-107" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(674, 291.5)
+scale = Vector2(1, 1.04688)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-108" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(738, 290.5)
+scale = Vector2(1, 1.01563)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-109" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(801, 97.5)
+scale = Vector2(1, 1.04688)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-110" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(865, 97.5)
+scale = Vector2(1, 1.04688)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-129" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(923, 97.5)
+scale = Vector2(1, 1.04688)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-130" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(986, 97.5)
+scale = Vector2(1, 1.04688)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-131" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(1055, 97.5)
+scale = Vector2(1.15625, 1.04688)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-111" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(801, 163)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-112" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(865, 163)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-132" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(1006, 362)
+scale = Vector2(3.5, 7.28125)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-113" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(801.5, 227.5)
+scale = Vector2(1.04688, 1.01563)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-114" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(867, 227)
+scale = Vector2(1, 1.03125)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-115" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(802.5, 292)
+scale = Vector2(1.01563, 1)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-116" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(867, 292)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-117" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(803.5, 355.5)
+scale = Vector2(1.04688, 1.01563)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-118" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(869, 355)
+scale = Vector2(1, 1.03125)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-119" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(802, 420)
+scale = Vector2(1.09375, 1)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-120" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(869, 420)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-121" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(803.5, 355.5)
+scale = Vector2(1.04688, 1.01563)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-122" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(869, 355)
+scale = Vector2(1, 1.03125)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-123" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(802, 420)
+scale = Vector2(1.09375, 1)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-124" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(869, 420)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-125" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(802.5, 484.5)
+scale = Vector2(1.04688, 1.01563)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-126" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(868, 484)
+scale = Vector2(1, 1.03125)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-127" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(801, 549)
+scale = Vector2(1.09375, 1)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-128" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(868, 550.5)
+scale = Vector2(1, 1.04688)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-30" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(225, 222)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-31" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(289, 222)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-32" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(225, 286)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-33" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(289, 286)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-54" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(354, 351)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-55" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(354, 415)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-56" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(225, 350)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-57" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(291, 349.5)
+scale = Vector2(1.0625, 1.04688)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-58" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(225, 414)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-59" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(289.5, 414.5)
+scale = Vector2(1.01563, 1.01563)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-62" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(352, 96)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-63" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(416, 96)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-64" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(352, 160)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-65" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(416, 160)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-66" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(480, 97)
+scale = Vector2(1, 1.03125)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-67" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(480, 162)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-68" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(481, 226)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-69" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(481, 290)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-70" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(417, 287)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-71" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(353, 287)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-72" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(417, 351)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-73" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(481, 352)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-74" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(418, 415)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-75" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(482, 416)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-76" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(354, 351)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-77" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(354, 415)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-78" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(481, 290)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-79" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(417, 476)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-80" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(353, 476)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-81" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(417, 540)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-82" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(481, 541)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-83" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(354, 540)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-84" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(481, 479)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-85" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(227, 473)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-86" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(163, 473)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-87" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(227, 537)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-88" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(291, 538)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-89" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(164, 537)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-90" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(97, 481.5)
+scale = Vector2(1.15625, 1.10937)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-91" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(99, 540)
+scale = Vector2(1.0625, 1)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-133" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(544, 574)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-134" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(608.5, 574)
+scale = Vector2(1.01563, 1)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-135" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(673, 579)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-136" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(737, 579)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-137" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(800, 581)
+scale = Vector2(1.09375, 1)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-138" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(867, 582.5)
+scale = Vector2(1, 1.04688)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-139" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(416, 572)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-140" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(480, 573)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-141" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(353, 572)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-142" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(226, 569)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-143" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(290, 570)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-144" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(163, 569)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-145" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(98, 572)
+scale = Vector2(1.0625, 1)
+texture = ExtResource("7_7wbkd")
+
+[node name="Floor-92" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(291, 476)
+texture = ExtResource("7_7wbkd")
+
+[node name="WallLeft" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(32.25, 33)
+scale = Vector2(0.992188, 1)
+texture = ExtResource("4_jq210")
+
+[node name="WallLeft6" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(33, 96)
+texture = ExtResource("4_jq210")
+
+[node name="WallLeft7" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(33, 223)
+texture = ExtResource("4_jq210")
+
+[node name="WallLeft9" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(32, 287)
+texture = ExtResource("4_jq210")
+
+[node name="WallLeft10" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(33, 351)
+texture = ExtResource("4_jq210")
+
+[node name="WallLeft11" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(33, 415)
+texture = ExtResource("4_jq210")
+
+[node name="WallLeft13" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(33, 602)
+texture = ExtResource("4_jq210")
+
+[node name="WallLeft14" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(33, 541)
+texture = ExtResource("4_jq210")
+
+[node name="WallLeft15" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(33, 479)
+texture = ExtResource("4_jq210")
+
+[node name="WallLeft8" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(33, 159)
+texture = ExtResource("4_jq210")
+
+[node name="WallLeft2" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(35, 32)
+rotation = 1.5708
+scale = Vector2(1, 0.596312)
+texture = ExtResource("4_jq210")
+
+[node name="WallLeft3" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(49, 32)
+rotation = 1.5708
+scale = Vector2(1, 0.596312)
+texture = ExtResource("4_jq210")
+
+[node name="WallUp" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(96, 32)
+texture = ExtResource("5_1tig8")
+
+[node name="WallUp" type="Sprite2D" parent="Map parts/WallUp"]
+z_index = -4
+position = Vector2(64, 0)
+texture = ExtResource("5_1tig8")
+
+[node name="WallUp" type="Sprite2D" parent="Map parts/WallUp/WallUp"]
+z_index = -4
+position = Vector2(64, 0)
+texture = ExtResource("5_1tig8")
+
+[node name="WallUp2" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(288, 32)
+texture = ExtResource("5_1tig8")
+
+[node name="WallUp" type="Sprite2D" parent="Map parts/WallUp2"]
+z_index = -4
+position = Vector2(64, 0)
+texture = ExtResource("5_1tig8")
+
+[node name="WallUp3" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(416, 32)
+texture = ExtResource("5_1tig8")
+
+[node name="WallLeft4" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(480, 32)
+texture = ExtResource("4_jq210")
+
+[node name="WallDown" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(488.084, 31.992)
+scale = Vector2(0.747375, 0.99975)
+texture = ExtResource("6_1fasl")
+
+[node name="WallDown3" type="Sprite2D" parent="Map parts"]
+z_index = -2
+position = Vector2(608, 32)
+texture = ExtResource("7_7wbkd")
+
+[node name="WallDown4" type="Sprite2D" parent="Map parts"]
+z_index = -2
+position = Vector2(672, 32)
+texture = ExtResource("6_1fasl")
+
+[node name="WallDown5" type="Sprite2D" parent="Map parts"]
+z_index = -2
+position = Vector2(736, 32)
+texture = ExtResource("6_1fasl")
+
+[node name="WallDown10" type="Sprite2D" parent="Map parts"]
+z_index = -2
+position = Vector2(800, 32)
+texture = ExtResource("6_1fasl")
+
+[node name="WallDown11" type="Sprite2D" parent="Map parts"]
+z_index = -2
+position = Vector2(864, 32)
+texture = ExtResource("6_1fasl")
+
+[node name="WallDown12" type="Sprite2D" parent="Map parts"]
+z_index = -2
+position = Vector2(1053, 32)
+texture = ExtResource("6_1fasl")
+
+[node name="WallDown15" type="Sprite2D" parent="Map parts"]
+z_index = -2
+position = Vector2(1116, 32)
+texture = ExtResource("6_1fasl")
+
+[node name="WallDown13" type="Sprite2D" parent="Map parts"]
+z_index = -2
+position = Vector2(927, 32)
+texture = ExtResource("6_1fasl")
+
+[node name="WallDown14" type="Sprite2D" parent="Map parts"]
+z_index = -2
+position = Vector2(991, 32)
+texture = ExtResource("6_1fasl")
+
+[node name="WallLeft5" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(544, 96)
+scale = Vector2(1, 1)
+texture = ExtResource("4_jq210")
+
+[node name="WallDown2" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(552.5, 96.5)
+scale = Vector2(0.734375, 0.984375)
+texture = ExtResource("6_1fasl")
+
+[node name="WallDown6" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(520.5, 32)
+scale = Vector2(0.265625, 1)
+texture = ExtResource("6_1fasl")
+
+[node name="BACK" type="Sprite2D" parent="Map parts"]
+z_index = -4
+position = Vector2(552.5, 32)
+scale = Vector2(0.734375, 1)
+texture = ExtResource("7_7wbkd")
+
+[node name="WallDown7" type="Sprite2D" parent="Map parts"]
+z_index = -2
+position = Vector2(608, 96)
+texture = ExtResource("6_1fasl")
+
+[node name="WallRight" type="Sprite2D" parent="Map parts"]
+z_index = -2
+position = Vector2(608, 79)
+texture = ExtResource("8_eku4m")
+
+[node name="WallDown8" type="Sprite2D" parent="Map parts"]
+position = Vector2(41, 617)
+scale = Vector2(0.75, 1)
+texture = ExtResource("6_1fasl")
+
+[node name="WallRight2" type="Sprite2D" parent="Map parts"]
+position = Vector2(-16, 666)
+texture = ExtResource("8_eku4m")
+
+[node name="WallRight3" type="Sprite2D" parent="Map parts"]
+position = Vector2(1116, 96)
+texture = ExtResource("8_eku4m")
+
+[node name="WallRight4" type="Sprite2D" parent="Map parts"]
+position = Vector2(1116, 287)
+texture = ExtResource("8_eku4m")
+
+[node name="WallRight5" type="Sprite2D" parent="Map parts"]
+position = Vector2(1116, 224)
+texture = ExtResource("8_eku4m")
+
+[node name="WallRight6" type="Sprite2D" parent="Map parts"]
+position = Vector2(1116, 160)
+texture = ExtResource("8_eku4m")
+
+[node name="WallRight7" type="Sprite2D" parent="Map parts"]
+position = Vector2(1120, 409)
+texture = ExtResource("8_eku4m")
+
+[node name="WallRight11" type="Sprite2D" parent="Map parts"]
+position = Vector2(1116, 350)
+texture = ExtResource("8_eku4m")
+
+[node name="WallRight8" type="Sprite2D" parent="Map parts"]
+position = Vector2(1120, 600)
+texture = ExtResource("8_eku4m")
+
+[node name="WallRight9" type="Sprite2D" parent="Map parts"]
+position = Vector2(1120, 537)
+texture = ExtResource("8_eku4m")
+
+[node name="WallRight10" type="Sprite2D" parent="Map parts"]
+position = Vector2(1120, 473)
+texture = ExtResource("8_eku4m")
+
+[node name="WallDown9" type="Sprite2D" parent="Map parts"]
+position = Vector2(96, 617)
+texture = ExtResource("6_1fasl")
+
+[node name="WallDown16" type="Sprite2D" parent="Map parts"]
+position = Vector2(224, 617)
+texture = ExtResource("6_1fasl")
+
+[node name="WallDown18" type="Sprite2D" parent="Map parts"]
+position = Vector2(288, 617)
+texture = ExtResource("6_1fasl")
+
+[node name="WallDown17" type="Sprite2D" parent="Map parts"]
+position = Vector2(160, 617)
+texture = ExtResource("6_1fasl")
+
+[node name="WallDown19" type="Sprite2D" parent="Map parts"]
+position = Vector2(352, 617)
+texture = ExtResource("6_1fasl")
+
+[node name="WallDown20" type="Sprite2D" parent="Map parts"]
+position = Vector2(480, 617)
+texture = ExtResource("6_1fasl")
+
+[node name="WallDown21" type="Sprite2D" parent="Map parts"]
+position = Vector2(544, 617)
+texture = ExtResource("6_1fasl")
+
+[node name="WallDown22" type="Sprite2D" parent="Map parts"]
+position = Vector2(416, 617)
+texture = ExtResource("6_1fasl")
+
+[node name="WallDown23" type="Sprite2D" parent="Map parts"]
+position = Vector2(608, 617)
+texture = ExtResource("6_1fasl")
+
+[node name="WallDown24" type="Sprite2D" parent="Map parts"]
+position = Vector2(736, 617)
+texture = ExtResource("6_1fasl")
+
+[node name="WallDown25" type="Sprite2D" parent="Map parts"]
+position = Vector2(800, 617)
+texture = ExtResource("6_1fasl")
+
+[node name="WallDown26" type="Sprite2D" parent="Map parts"]
+position = Vector2(672, 617)
+texture = ExtResource("6_1fasl")
+
+[node name="WallDown27" type="Sprite2D" parent="Map parts"]
+position = Vector2(864, 617)
+texture = ExtResource("6_1fasl")
+
+[node name="WallDown28" type="Sprite2D" parent="Map parts"]
+position = Vector2(992, 617)
+texture = ExtResource("6_1fasl")
+
+[node name="WallDown29" type="Sprite2D" parent="Map parts"]
+position = Vector2(1056, 617)
+texture = ExtResource("6_1fasl")
+
+[node name="WallDown31" type="Sprite2D" parent="Map parts"]
+z_index = -1
+position = Vector2(1120, 617)
+texture = ExtResource("6_1fasl")
+
+[node name="WallDown30" type="Sprite2D" parent="Map parts"]
+position = Vector2(928, 617)
+texture = ExtResource("6_1fasl")
+
+[node name="Wall collisisons" type="StaticBody2D" parent="Map parts"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Map parts/Wall collisisons"]
+polygon = PackedVector2Array(19, 628, 1130, 628, 1129, 66, 642, 65, 642, 129, 641, 132, 511, 132, 510, 66, 446, 66, 446, 19, 18, 19, 19, 622, -14, 626, -23, -31, 1164, -30, 1173, 666, -22, 662, -4, 631)
+
+[node name="CaveEntrance" type="Sprite2D" parent="."]
+position = Vector2(1066, 99)
+texture = ExtResource("9_g6mpx")
+
+[connection signal="body_entered" from="Exit" to="Exit" method="_on_body_entered"]
