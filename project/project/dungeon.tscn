@@ -74,6 +74,7 @@ position_smoothing_enabled = true
 position_smoothing_speed = 3.5
 
 [node name="Player" type="CharacterBody2D" parent="." groups=["teleportableObjects"]]
+visible = false
 z_index = 10
 position = Vector2(57, 272)
 scale = Vector2(0.33, 0.33)

@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=3 uid="uid://c62i8nchocpjg"]
+
+[ext_resource type="Texture2D" uid="uid://cfv7tt6h0a2ix" path="res://icon.svg" id="1_n1xa0"]
+
+[sub_resource type="GDScript" id="GDScript_4xwlp"]
+resource_name = "hi"
+script/source = "extends CharacterBody2D
+
+@export var speed = 400
+
+func get_input():
+	var input_direction = Input.get_vector(left\", \"right\", \"up\", \"downs)
+	velocity = input_direction * speed
+
+func _physics_process(_delta):
+	get_input()
+	move_and_slide()
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6fy6h"]
+size = Vector2(128, 129)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ew08a"]
+size = Vector2(618.687, 308.591)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = SubResource("GDScript_4xwlp")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(535, 244)
+texture = ExtResource("1_n1xa0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(534, 242.5)
+shape = SubResource("RectangleShape2D_6fy6h")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-7, 631)
+rotation = 0.932992
+scale = Vector2(2.30729, 1.93423)
+texture = ExtResource("1_n1xa0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D"]
+scale = Vector2(0.225334, 0.408122)
+shape = SubResource("RectangleShape2D_ew08a")
