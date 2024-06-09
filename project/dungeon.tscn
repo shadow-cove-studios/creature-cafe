@@ -43,8 +43,9 @@ size = Vector2(128, 129)
 z_index = -4
 
 [node name="Exit" type="Area2D" parent="."]
-visible = false
-position = Vector2(48, 442)
+z_index = 6
+position = Vector2(49, 85)
+rotation = 1.55793
 script = ExtResource("1_dy3h2")
 
 [node name="HoleSprite" type="Sprite2D" parent="Exit"]
@@ -59,19 +60,6 @@ z_index = -4
 position = Vector2(-6, -79)
 scale = Vector2(4.10094, 0.771988)
 shape = SubResource("RectangleShape2D_k3i51")
-
-[node name="Camera2D" type="Camera2D" parent="Exit"]
-position = Vector2(-156, -261.08)
-scale = Vector2(0.33, 0.33)
-anchor_mode = 0
-zoom = Vector2(1.42, 1.42)
-limit_left = 0
-limit_top = 0
-limit_right = 1636
-limit_bottom = 1120
-limit_smoothed = true
-position_smoothing_enabled = true
-position_smoothing_speed = 3.5
 
 [node name="Player" type="CharacterBody2D" parent="." groups=["teleportableObjects"]]
 z_index = 10
@@ -91,7 +79,20 @@ shape = SubResource("RectangleShape2D_xw3jq")
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
 position = Vector2(-500, -276)
-remote_path = NodePath("../../Exit/Camera2D")
+remote_path = NodePath("../Camera2D")
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(78.7879, -769.939)
+scale = Vector2(1, 1)
+anchor_mode = 0
+zoom = Vector2(1.42, 1.42)
+limit_left = 0
+limit_top = 0
+limit_right = 1636
+limit_bottom = 1120
+limit_smoothed = true
+position_smoothing_enabled = true
+position_smoothing_speed = 3.5
 
 [node name="Map parts" type="Sprite2D" parent="."]
 

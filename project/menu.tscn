@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dmmvdvbje7px3"]
+[gd_scene load_steps=5 format=3 uid="uid://dmmvdvbje7px3"]
 
 [ext_resource type="Texture2D" uid="uid://bgdginlfklhip" path="res://buttonLong_brown.png" id="1_krmg5"]
 [ext_resource type="Script" path="res://ContinueGame.gd" id="2_bdgea"]
 [ext_resource type="Script" path="res://QuitToDesktop.gd" id="2_hl8wa"]
+[ext_resource type="Script" path="res://openSettings.gd" id="3_7ecnu"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -58,6 +59,7 @@ text = "settings "
 icon = ExtResource("1_krmg5")
 flat = true
 icon_alignment = 1
+script = ExtResource("3_7ecnu")
 
 [node name="Button5" type="Button" parent="."]
 layout_mode = 0
@@ -67,5 +69,7 @@ offset_right = 213.0
 offset_bottom = 609.0
 action_mode = 0
 text = "quit"
+icon = ExtResource("1_krmg5")
+flat = true
 icon_alignment = 1
 script = ExtResource("2_hl8wa")
