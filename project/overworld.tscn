@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://c62i8nchocpjg"]
+[gd_scene load_steps=9 format=3 uid="uid://c62i8nchocpjg"]
 
 [ext_resource type="SpriteFrames" uid="uid://mjhm6ejtc1ye" path="res://chefie_animations.tres" id="1_uenum"]
 [ext_resource type="Script" path="res://Hole.gd" id="2_cstnb"]
 [ext_resource type="Texture2D" uid="uid://cpdtikgycjma8" path="res://cave entrance.png" id="3_mrg74"]
 [ext_resource type="TileSet" uid="uid://dperb4yp53swj" path="res://new_tile_set.tres" id="4_5qsq4"]
+[ext_resource type="Texture2D" uid="uid://ckrgv6mwbfrhg" path="res://cafe.png" id="5_42lcu"]
 
 [sub_resource type="GDScript" id="GDScript_4xwlp"]
 resource_name = "hi"
@@ -35,10 +36,11 @@ size = Vector2(78.7879, 109.091)
 size = Vector2(18.5323, 119.173)
 
 [node name="Overworld" type="Node2D"]
+position = Vector2(1099, 668)
 
 [node name="Player" type="CharacterBody2D" parent="." groups=["teleportableObjects"]]
-z_index = 100
-position = Vector2(172, 80)
+z_index = 700
+position = Vector2(442, 85)
 scale = Vector2(0.33, 0.33)
 script = SubResource("GDScript_4xwlp")
 
@@ -47,10 +49,12 @@ position = Vector2(-39.3939, 15.1515)
 shape = SubResource("RectangleShape2D_lg1nw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
+z_index = 740
 position = Vector2(-33.3335, -21.2125)
 scale = Vector2(2.89326, 2.89326)
 sprite_frames = ExtResource("1_uenum")
 animation = &"Chefie Idle"
+frame_progress = 0.571461
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player/AnimatedSprite2D"]
 position = Vector2(2.09478, 9.42646)
@@ -58,13 +62,9 @@ scale = Vector2(0.345631, 0.345631)
 remote_path = NodePath("../../Camera2D")
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2(-27.2728, 6.0607)
+position = Vector2(60.6063, 3.05176e-05)
 scale = Vector2(1, 1)
 zoom = Vector2(1.42, 1.42)
-limit_left = 0
-limit_top = 0
-limit_right = 1636
-limit_bottom = 1120
 limit_smoothed = true
 position_smoothing_enabled = true
 position_smoothing_speed = 3.5
@@ -100,5 +100,11 @@ layer_3/name = "tree 3"
 layer_3/tile_data = PackedInt32Array(1245157, 1, 0, 983013, 1, 0, 786405, 1, 0, 458724, 1, 0, 262116, 1, 0, -65564, 1, 0, -262172, 1, 0, -458780, 1, 0, -786460, 1, 0, 1310695, 1, 0, 1310696, 1, 0, 1245160, 1, 0, 1245161, 1, 0, 1245162, 1, 0, 1245163, 1, 0, 1245164, 1, 0, 1245165, 1, 0, 1310702, 1, 0, 1310703, 1, 0, 1310704, 1, 0, 1310705, 1, 0, 1310706, 1, 0, 1245188, 1, 0, 1245189, 1, 0, 1245190, 1, 0, 1245191, 1, 0, 1245192, 1, 0, 1245193, 1, 0, 1310729, 1, 0, 1310730, 1, 0, 1310731, 1, 0, 1245195, 1, 0, 1245196, 1, 0, 1245197, 1, 0, 1245198, 1, 0, 1245199, 1, 0, 1245200, 1, 0, 1245201, 1, 0, 1245202, 1, 0, 1245203, 1, 0, 1245204, 1, 0, 1245205, 1, 0, 1245206, 1, 0, 1245207, 1, 0, 1245208, 1, 0, 1245209, 1, 0, 1245210, 1, 0, 1245211, 1, 0, 1310747, 1, 0, 1310748, 1, 0, 1310749, 1, 0)
 layer_4/name = "tree 4"
 layer_4/tile_data = PackedInt32Array(1441778, 1, 0, 1441775, 1, 0, 1441771, 1, 0, 1441768, 1, 0, 1441764, 1, 0, 1310690, 1, 0, 917474, 1, 0, 589794, 1, 0, 327650, 1, 0, 720866, 1, 0, -65566, 1, 0, -458782, 1, 0, -327710, 1, 0, 65506, 1, 0, 524258, 1, 0, 1048546, 1, 0, 1441762, 1, 0, -720926, 1, 0, -917534, 1, 0, 1376265, 1, 0, 1376268, 1, 0, 1376272, 1, 0, 1376278, 1, 0, 1376276, 1, 0, 1376281, 1, 0, 1376284, 1, 0, 1376287, 1, 0, 1376290, 1, 0, 1310723, 1, 0, 1310724, 1, 0, 1310725, 1, 0, 1376261, 1, 0, 1376262, 1, 0, 1376263, 1, 0, 1376264, 1, 0, 1376266, 1, 0)
+
+[node name="Cafe" type="Sprite2D" parent="."]
+z_index = 109
+position = Vector2(382, 35)
+scale = Vector2(2.86, 2.86)
+texture = ExtResource("5_42lcu")
 
 [connection signal="body_entered" from="Hole" to="Hole" method="_on_body_entered"]
