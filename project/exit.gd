@@ -1,6 +1,6 @@
 extends Area2D
 
-var exit = load("res://scene.tscn")
+var exit = load("res://overworld.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body. Really only here incase future us needs to refactor this code.

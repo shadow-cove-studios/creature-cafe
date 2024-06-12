@@ -1,6 +1,6 @@
 extends Button
 
-var overworld = load("res://scene.tscn")
+var continuesave = load("res://overworld.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -12,4 +12,4 @@ func _process(delta):
 	pass
 
 func _pressed():
-	get_tree().change_scene_to_packed(overworld)
+	get_tree().change_scene_to_packed(continuesave)
