@@ -11,9 +11,9 @@ config_version=5
 [application]
 
 config/name="Creature-cafe"
-run/main_scene="res://menu.tscn"
+run/main_scene="res://scenes/menus/menu.tscn"
 config/features=PackedStringArray("4.4", "Forward Plus")
-config/icon="res://frying pan.png"
+config/icon="res://sprites/frying pan.png"
 
 [dotnet]
 
