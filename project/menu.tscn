@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://dmmvdvbje7px3"]
 
 [ext_resource type="Texture2D" uid="uid://bgdginlfklhip" path="res://buttonLong_brown.png" id="1_krmg5"]
-[ext_resource type="Script" path="res://ContinueGame.gd" id="2_bdgea"]
-[ext_resource type="Script" path="res://QuitToDesktop.gd" id="2_hl8wa"]
-[ext_resource type="Script" path="res://openSettings.gd" id="3_7ecnu"]
+[ext_resource type="Script" uid="uid://60hoyj0qe4pw" path="res://ContinueGame.gd" id="2_bdgea"]
+[ext_resource type="Script" uid="uid://dwnrfx7p0nak5" path="res://QuitToDesktop.gd" id="2_hl8wa"]
+[ext_resource type="Script" uid="uid://cj7pr8aiyyk2h" path="res://openSettings.gd" id="3_7ecnu"]
 
 [node name="Control" type="Control"]
 layout_mode = 3

@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://c3tgm0sbtnp54"]
 
-[ext_resource type="Script" path="res://exit.gd" id="1_dy3h2"]
+[ext_resource type="Script" uid="uid://d1kchhpng60sq" path="res://exit.gd" id="1_dy3h2"]
 [ext_resource type="Texture2D" uid="uid://kn4irxp17axg" path="res://cave exit.png" id="2_yho7c"]
 [ext_resource type="Texture2D" uid="uid://cfv7tt6h0a2ix" path="res://icon.svg" id="3_cwkay"]
 [ext_resource type="Texture2D" uid="uid://c88n4h6ctoa42" path="res://wall_left.png" id="4_jq210"]
@@ -83,6 +83,7 @@ remote_path = NodePath("../Camera2D")
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(-500, -276)
+scale = Vector2(1, 1)
 anchor_mode = 0
 zoom = Vector2(1.42, 1.42)
 limit_left = 0

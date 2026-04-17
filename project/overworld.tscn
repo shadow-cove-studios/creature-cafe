@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://c62i8nchocpjg"]
 
 [ext_resource type="SpriteFrames" uid="uid://mjhm6ejtc1ye" path="res://chefie_animations.tres" id="1_uenum"]
-[ext_resource type="Script" path="res://Hole.gd" id="2_cstnb"]
+[ext_resource type="Script" uid="uid://c878stkb0os4r" path="res://Hole.gd" id="2_cstnb"]
 [ext_resource type="Texture2D" uid="uid://cpdtikgycjma8" path="res://cave entrance.png" id="3_mrg74"]
 [ext_resource type="TileSet" uid="uid://dperb4yp53swj" path="res://new_tile_set.tres" id="4_5qsq4"]
 [ext_resource type="Texture2D" uid="uid://ckrgv6mwbfrhg" path="res://cafe.png" id="5_42lcu"]
