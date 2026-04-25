@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 SaveHandler="*res://Scripts/saveHandler.gd"
 
+[display]
+
+window/stretch/mode="viewport"
+
 [dotnet]
 
 project/assembly_name="Creature-cafe"
