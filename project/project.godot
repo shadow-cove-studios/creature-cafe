@@ -15,9 +15,24 @@ run/main_scene="res://scenes/menus/menu.tscn"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://sprites/frying pan.png"
 
+[display]
+
+window/stretch/mode="viewport"
+
 [dotnet]
 
 project/assembly_name="Creature-cafe"
+
+[file_customization]
+
+folder_colors={
+"res://animations/": "orange",
+"res://config/": "yellow",
+"res://misc. objects/": "purple",
+"res://scenes/": "red",
+"res://scripts/": "green",
+"res://sprites/": "blue"
+}
 
 [input]
 

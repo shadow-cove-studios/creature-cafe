@@ -1,8 +1,57 @@
-[gd_scene load_steps=2 format=3 uid="uid://bwkcacae1b6vo"]
+[gd_scene load_steps=3 format=3 uid="uid://bwkcacae1b6vo"]
 
 [ext_resource type="PackedScene" uid="uid://dnfi0qtr534uq" path="res://scenes/asset scenes/chefie.tscn" id="1_6dst5"]
+[ext_resource type="Texture2D" uid="uid://ckrgv6mwbfrhg" path="res://sprites/cafe.png" id="2_j6aa2"]
 
 [node name="Overworld" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_6dst5")]
 position = Vector2(435, 340)
+
+[node name="Cafe" type="Sprite2D" parent="."]
+position = Vector2(121, 334)
+texture = ExtResource("2_j6aa2")
+
+[node name="Cafe2" type="Sprite2D" parent="."]
+position = Vector2(138, 110)
+texture = ExtResource("2_j6aa2")
+
+[node name="Cafe3" type="Sprite2D" parent="."]
+position = Vector2(116, 544)
+texture = ExtResource("2_j6aa2")
+
+[node name="Cafe4" type="Sprite2D" parent="."]
+position = Vector2(342, 105)
+texture = ExtResource("2_j6aa2")
+
+[node name="Cafe5" type="Sprite2D" parent="."]
+position = Vector2(545, 107)
+texture = ExtResource("2_j6aa2")
+
+[node name="Cafe6" type="Sprite2D" parent="."]
+position = Vector2(755, 110)
+texture = ExtResource("2_j6aa2")
+
+[node name="Cafe10" type="Sprite2D" parent="."]
+position = Vector2(314, 534)
+texture = ExtResource("2_j6aa2")
+
+[node name="Cafe11" type="Sprite2D" parent="."]
+position = Vector2(517, 536)
+texture = ExtResource("2_j6aa2")
+
+[node name="Cafe12" type="Sprite2D" parent="."]
+position = Vector2(727, 539)
+texture = ExtResource("2_j6aa2")
+
+[node name="Cafe7" type="Sprite2D" parent="."]
+position = Vector2(955, 107)
+texture = ExtResource("2_j6aa2")
+
+[node name="Cafe8" type="Sprite2D" parent="."]
+position = Vector2(964, 330)
+texture = ExtResource("2_j6aa2")
+
+[node name="Cafe9" type="Sprite2D" parent="."]
+position = Vector2(969, 528)
+texture = ExtResource("2_j6aa2")
