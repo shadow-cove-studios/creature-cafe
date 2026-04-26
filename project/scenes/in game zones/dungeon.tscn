@@ -20,6 +20,7 @@ script/source = "extends CharacterBody2D
 ## Commenter that i copied from:   marcosmachado6844
 
 ## prototypeBuild
+##From the future: Are we serious with these comments?
 @export var walkSpeed = 230 #self exlpanitory, the speed of wich the character walks.
 
 func get_input():#this functiun recives input and changes the character's velocity in effect
