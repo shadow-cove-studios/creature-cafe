@@ -1,0 +1,46 @@
+[gd_scene load_steps=4 format=3 uid="uid://dnfi0qtr534uq"]
+
+[ext_resource type="Texture2D" uid="uid://cpa8bhp2nyt6p" path="res://sprites/godot.png" id="1_wf5iw"]
+
+[sub_resource type="GDScript" id="GDScript_4xwlp"]
+resource_name = "hi"
+script/source = "extends CharacterBody2D
+## Walking script.
+##
+## A walking script, originally copy and pasted from the tutorial below,
+## but it only worked on the x axis, and i then copy and pasted from a commment on the vid.
+##
+## original tutorial:              https://www.youtube.com/watch?v=KceMokK2qFA
+## Commenter that i copied from:   marcosmachado6844
+
+## prototypeBuild
+@export var walkSpeed = 230 #self exlpanitory, the speed of wich the character walks.
+
+func get_input():#this functiun recives input and changes the character's velocity in effect
+	var input_direction = Input.get_vector(\"left\", \"right\", \"up\", \"down\") ##This variable recives the input of the keyboard,
+	velocity = input_direction * walkSpeed
+
+func _physics_process(_delta): #this function actually makes your guy move :)
+	get_input()
+	move_and_slide()
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gu2jr"]
+size = Vector2(25, 25)
+
+[node name="Player" type="CharacterBody2D" groups=["teleportableObjects"]]
+z_index = 700
+script = SubResource("GDScript_4xwlp")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-3.8147e-05, 3.8147e-06)
+zoom = Vector2(3.5, 3.5)
+limit_smoothed = true
+position_smoothing_enabled = true
+position_smoothing_speed = 3.5
+
+[node name="Godot" type="Sprite2D" parent="."]
+texture = ExtResource("1_wf5iw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_gu2jr")
