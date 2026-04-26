@@ -15,10 +15,6 @@ run/main_scene="res://scenes/menus/menu.tscn"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://sprites/frying pan.png"
 
-[display]
-
-window/stretch/mode="viewport"
-
 [dotnet]
 
 project/assembly_name="Creature-cafe"
