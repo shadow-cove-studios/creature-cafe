@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://bwkcacae1b6vo"]
+[gd_scene load_steps=5 format=3 uid="uid://bwkcacae1b6vo"]
 
 [ext_resource type="PackedScene" uid="uid://dnfi0qtr534uq" path="res://scenes/asset scenes/chefie.tscn" id="1_6dst5"]
 [ext_resource type="Texture2D" uid="uid://ckrgv6mwbfrhg" path="res://sprites/cafe.png" id="2_j6aa2"]
+[ext_resource type="Script" uid="uid://hy1m5y781j6b" path="res://scenes/in game zones/area_2d.gd" id="3_gu2jr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qsbfp"]
 
 [node name="Overworld" type="Node2D"]
 
@@ -55,3 +58,11 @@ texture = ExtResource("2_j6aa2")
 [node name="Cafe9" type="Sprite2D" parent="."]
 position = Vector2(969, 528)
 texture = ExtResource("2_j6aa2")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(121, 334)
+script = ExtResource("3_gu2jr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(4.06664, 4.06664)
+shape = SubResource("RectangleShape2D_qsbfp")

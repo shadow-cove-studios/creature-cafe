@@ -24,3 +24,8 @@ func get_input():#this functiun recives input and changes the character's veloci
 func _physics_process(_delta): #this function actually makes your guy move :)
 	get_input()
 	move_and_slide()
+	if hitpoints<=0:
+		get_tree().change_scene_to_file("res://scenes/menus/menu.tscn")
+		
+	
+	
