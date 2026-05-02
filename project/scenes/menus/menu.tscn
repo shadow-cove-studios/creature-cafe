@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dmmvdvbje7px3"]
 
 [ext_resource type="Texture2D" uid="uid://bgdginlfklhip" path="res://sprites/buttonLong_brown.png" id="1_cfcag"]
-[ext_resource type="Script" uid="uid://bgbco20kjvbsq" path="res://sprites/ContinueGame.gd" id="2_sf4ia"]
+[ext_resource type="Script" uid="uid://bgbco20kjvbsq" path="res://scripts/ContinueGame.gd" id="2_sf4ia"]
 [ext_resource type="Script" uid="uid://bvl3rluq6iuct" path="res://scripts/openSettings.gd" id="3_bt0g6"]
 [ext_resource type="Script" uid="uid://lwcm0xxaptk4" path="res://scripts/QuitToDesktop.gd" id="4_f4dmw"]
 

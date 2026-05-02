@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dnfi0qtr534uq" path="res://scenes/asset scenes/chefie.tscn" id="1_6dst5"]
 [ext_resource type="Texture2D" uid="uid://ckrgv6mwbfrhg" path="res://sprites/cafe.png" id="2_j6aa2"]
-[ext_resource type="Script" uid="uid://hy1m5y781j6b" path="res://scenes/in game zones/area_2d.gd" id="3_gu2jr"]
+[ext_resource type="Script" uid="uid://hy1m5y781j6b" path="res://scripts/area_2d.gd" id="3_gu2jr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qsbfp"]
 
