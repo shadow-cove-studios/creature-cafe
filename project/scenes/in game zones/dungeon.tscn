@@ -1,8 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://c82nevafabdwg"]
 
-[ext_resource type="Script" uid="uid://3majxi82qxmq" path="res://scripts/exit.gd" id="1_dy3h2"]
+[ext_resource type="Script" uid="uid://3majxi82qxmq" path="res://Scripts/exit.gd" id="1_dy3h2"]
 [ext_resource type="Texture2D" uid="uid://kn4irxp17axg" path="res://sprites/cave exit.png" id="2_yho7c"]
-[ext_resource type="SpriteFrames" uid="uid://mjhm6ejtc1ye" path="res://animations/chefie_animations.tres" id="3_g882a"]
 [ext_resource type="Texture2D" uid="uid://cpdtikgycjma8" path="res://sprites/cave entrance.png" id="9_g6mpx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k3i51"]
@@ -33,6 +32,9 @@ func _physics_process(_delta): #this function actually makes your guy move :)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xw3jq"]
 size = Vector2(93.9394, 167.658)
+
+[sub_resource type="Resource" id="Resource_71n8l"]
+metadata/__load_path__ = "res://animations/chefie_animations.tres"
 
 [node name="Node2D" type="Node2D"]
 z_index = -4
@@ -87,7 +89,7 @@ position_smoothing_speed = 3.5
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
 scale = Vector2(4.93013, 4.93013)
-sprite_frames = ExtResource("3_g882a")
+sprite_frames = SubResource("Resource_71n8l")
 animation = &"Chefie Idle"
 
 [node name="CaveEntrance" type="Sprite2D" parent="."]
