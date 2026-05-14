@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=3 uid="uid://kd571a5biuvu"]
+
+[ext_resource type="Script" uid="uid://dubppckvkbtcy" path="res://scripts/pause_menu.gd" id="1_fwndu"]
+[ext_resource type="Texture2D" uid="uid://bgdginlfklhip" path="res://sprites/buttonLong_brown.png" id="2_7unhi"]
+
+[node name="PauseMenu" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_fwndu")
+
+[node name="Menu container" type="VBoxContainer" parent="."]
+offset_left = 152.0
+offset_top = 176.0
+offset_right = 353.0
+offset_bottom = 469.0
+
+[node name="Label" type="Label" parent="Menu container"]
+layout_mode = 2
+text = "PAUSED
+Creature Cafe!"
+horizontal_alignment = 1
+
+[node name="ResumeButton" type="Button" parent="Menu container"]
+layout_mode = 2
+text = "Resume"
+icon = ExtResource("2_7unhi")
+icon_alignment = 1
+
+[node name="Button3" type="Button" parent="Menu container"]
+layout_mode = 2
+text = "Save"
+icon = ExtResource("2_7unhi")
+icon_alignment = 1
+
+[node name="Button4" type="Button" parent="Menu container"]
+layout_mode = 2
+text = "Settings"
+icon = ExtResource("2_7unhi")
+icon_alignment = 1
+
+[node name="Button2" type="Button" parent="Menu container"]
+layout_mode = 2
+text = "Quit to menu"
+icon = ExtResource("2_7unhi")
+icon_alignment = 1
+
+[connection signal="pressed" from="Menu container/ResumeButton" to="." method="_on_resume_pressed"]
