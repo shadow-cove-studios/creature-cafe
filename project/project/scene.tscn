@@ -41,12 +41,12 @@ size = Vector2(18.5323, 119.173)
 
 [node name="Player" type="CharacterBody2D" parent="." groups=["teleportableObjects"]]
 z_index = 2
-<<<<<<< HEAD:project/scene.tscn
+<<<<<<<< HEAD:project/scene.tscn
 position = Vector2(1185, 376)
-=======
+========
 position = Vector2(337, 920.08)
 scale = Vector2(0.33, 0.33)
->>>>>>> 834365f9c59abb5061ea89ac5a45b80ed6a0d168:project/project/scene.tscn
+>>>>>>>> b54a313831b512cfe21540d5dfc180b7a8d78861:project/project/scene.tscn
 script = SubResource("GDScript_4xwlp")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
@@ -79,15 +79,15 @@ scale = Vector2(3.2041, 3.04133)
 texture = ExtResource("2_luybu")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-<<<<<<< HEAD:project/scene.tscn
+<<<<<<<< HEAD:project/scene.tscn
 position = Vector2(1185, 376)
 zoom = Vector2(0.71, 0.71)
-=======
+========
 position = Vector2(172, 829)
 scale = Vector2(0.33, 0.33)
 anchor_mode = 0
 zoom = Vector2(1.42, 1.42)
->>>>>>> 834365f9c59abb5061ea89ac5a45b80ed6a0d168:project/project/scene.tscn
+>>>>>>>> b54a313831b512cfe21540d5dfc180b7a8d78861:project/project/scene.tscn
 limit_left = 0
 limit_top = 0
 limit_right = 1636

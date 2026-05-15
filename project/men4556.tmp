@@ -1,0 +1,63 @@
+[gd_scene load_steps=4 format=3 uid="uid://cr1j5uxgfc2vl"]
+
+[ext_resource type="Script" path="res://quit.gd" id="1_ge1ww"]
+[ext_resource type="Script" path="res://continue.gd" id="1_t07tj"]
+[ext_resource type="Script" path="res://newgame.gd" id="2_wg7uk"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ContinueButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 353.0
+offset_right = 114.0
+offset_bottom = 398.0
+text = "continue"
+script = ExtResource("1_t07tj")
+metadata/DoesSaveExist = false
+metadata/LastSave = ""
+
+[node name="NewGameButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 408.0
+offset_right = 120.0
+offset_bottom = 453.0
+text = "new game"
+script = ExtResource("2_wg7uk")
+
+[node name="Node2D" type="Node2D" parent="NewGameButton" groups=["Persist"]]
+position = Vector2(-25, -408)
+
+[node name="LoadGameButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 467.0
+offset_right = 124.0
+offset_bottom = 512.0
+text = "load game"
+
+[node name="SettingsButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 531.0
+offset_right = 119.0
+offset_bottom = 576.0
+text = "settings"
+
+[node name="ExitButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 587.0
+offset_right = 120.0
+offset_bottom = 632.0
+text = "quit to desktop"
+script = ExtResource("1_ge1ww")
+
+[connection signal="pressed" from="NewGameButton" to="ContinueButton" method="_on_new_game_button_pressed"]
