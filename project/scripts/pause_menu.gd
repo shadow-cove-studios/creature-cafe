@@ -19,3 +19,8 @@ func _on_resume_pressed():
 	if get_tree().paused == true:
 		visible = false
 		get_tree().paused = false
+
+
+func _on_quit_button_pressed():
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://scenes/menus/menu.tscn")

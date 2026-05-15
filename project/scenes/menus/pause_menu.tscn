@@ -25,22 +25,23 @@ text = "Resume"
 icon = ExtResource("2_7unhi")
 icon_alignment = 1
 
-[node name="Button3" type="Button" parent="Menu container"]
+[node name="SaveButton" type="Button" parent="Menu container"]
 layout_mode = 2
-text = "Save"
+text = "Save game"
 icon = ExtResource("2_7unhi")
 icon_alignment = 1
 
-[node name="Button4" type="Button" parent="Menu container"]
+[node name="SettingsButton" type="Button" parent="Menu container"]
 layout_mode = 2
 text = "Settings"
 icon = ExtResource("2_7unhi")
 icon_alignment = 1
 
-[node name="Button2" type="Button" parent="Menu container"]
+[node name="QuitButton" type="Button" parent="Menu container"]
 layout_mode = 2
 text = "Quit to menu"
 icon = ExtResource("2_7unhi")
 icon_alignment = 1
 
 [connection signal="pressed" from="Menu container/ResumeButton" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Menu container/QuitButton" to="." method="_on_quit_button_pressed"]
