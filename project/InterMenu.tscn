@@ -1,0 +1,116 @@
+[gd_scene load_steps=8 format=3 uid="uid://bok13paljvmbu"]
+
+[ext_resource type="PackedScene" uid="uid://ch0y5hvn63ppe" path="res://scenes/asset scenes/menuPlayer.tscn" id="1_lcoft"]
+[ext_resource type="Script" uid="uid://b5ajq7lo777fi" path="res://InterMenuScript.gd" id="1_p2dom"]
+[ext_resource type="Texture2D" uid="uid://bgdginlfklhip" path="res://sprites/buttonLong_brown.png" id="2_p2dom"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ftnnm"]
+size = Vector2(188.5, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p2dom"]
+size = Vector2(1152, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lvinh"]
+size = Vector2(20, 649)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ssrci"]
+size = Vector2(19.75, 648)
+
+[node name="InterMainMenu" type="Node2D"]
+script = ExtResource("1_p2dom")
+
+[node name="Player" parent="." instance=ExtResource("1_lcoft")]
+position = Vector2(584, 290)
+
+[node name="ButtonLongBrown" type="Sprite2D" parent="."]
+position = Vector2(587, 362)
+texture = ExtResource("2_p2dom")
+
+[node name="Area2D" type="Area2D" parent="ButtonLongBrown"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ButtonLongBrown/Area2D"]
+position = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_ftnnm")
+
+[node name="ButtonLongBrown3" type="Sprite2D" parent="."]
+position = Vector2(574, 91)
+texture = ExtResource("2_p2dom")
+
+[node name="ButtonLongBrown4" type="Sprite2D" parent="."]
+position = Vector2(96, 368)
+texture = ExtResource("2_p2dom")
+
+[node name="ButtonLongBrown5" type="Sprite2D" parent="."]
+position = Vector2(593, 606)
+texture = ExtResource("2_p2dom")
+
+[node name="Area2D" type="Area2D" parent="ButtonLongBrown5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ButtonLongBrown5/Area2D"]
+position = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_ftnnm")
+
+[node name="ButtonLongBrown2" type="Sprite2D" parent="."]
+position = Vector2(1057, 351)
+texture = ExtResource("2_p2dom")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 559.0
+offset_top = 348.0
+offset_right = 630.0
+offset_bottom = 371.0
+text = "Continue"
+
+[node name="Label5" type="Label" parent="."]
+offset_left = 564.0
+offset_top = 592.0
+offset_right = 635.0
+offset_bottom = 615.0
+text = "Quit?"
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 1016.0
+offset_top = 340.0
+offset_right = 1078.0
+offset_bottom = 363.0
+text = "Settings -->"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 36.0
+offset_top = 353.0
+offset_right = 137.0
+offset_bottom = 376.0
+text = "<-- Load save"
+
+[node name="Label4" type="Label" parent="."]
+offset_left = 527.0
+offset_top = 30.0
+offset_right = 610.0
+offset_bottom = 105.0
+text = "^
+|
+New game"
+horizontal_alignment = 1
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 324)
+
+[node name="Area2D3" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3"]
+position = Vector2(576, -10)
+shape = SubResource("RectangleShape2D_p2dom")
+
+[node name="Area2D2" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(1162, 324)
+shape = SubResource("RectangleShape2D_lvinh")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-9.875, 324)
+shape = SubResource("RectangleShape2D_ssrci")
+
+[connection signal="area_shape_entered" from="Area2D3" to="." method="_on_area_2d_3_area_shape_entered"]

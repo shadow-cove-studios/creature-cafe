@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://ch0y5hvn63ppe"]
+
+[ext_resource type="Script" uid="uid://dx4oplrop3b1j" path="res://scripts/chefiescript.gd" id="1_8cf5c"]
+[ext_resource type="Texture2D" uid="uid://cpa8bhp2nyt6p" path="res://sprites/godot.png" id="2_05yxv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gu2jr"]
+size = Vector2(25, 25)
+
+[node name="Player" type="CharacterBody2D" groups=["teleportableObjects"]]
+z_index = 700
+script = ExtResource("1_8cf5c")
+
+[node name="Godot" type="Sprite2D" parent="."]
+texture = ExtResource("2_05yxv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_gu2jr")
