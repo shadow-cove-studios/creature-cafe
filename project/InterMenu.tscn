@@ -33,7 +33,7 @@ position = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_ftnnm")
 
 [node name="ButtonLongBrown3" type="Sprite2D" parent="."]
-position = Vector2(574, 91)
+position = Vector2(584, 61)
 texture = ExtResource("2_p2dom")
 
 [node name="ButtonLongBrown4" type="Sprite2D" parent="."]
@@ -83,10 +83,9 @@ offset_bottom = 376.0
 text = "<-- Load save"
 
 [node name="Label4" type="Label" parent="."]
-offset_left = 527.0
-offset_top = 30.0
-offset_right = 610.0
-offset_bottom = 105.0
+offset_left = 537.0
+offset_right = 620.0
+offset_bottom = 75.0
 text = "^
 |
 New game"

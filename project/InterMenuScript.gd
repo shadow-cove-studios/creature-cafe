@@ -1,14 +1,16 @@
 extends Node2D
 
-
 var inzone = false
 var camerashifted = false
 var justleft = false
 #this logic scripting is pissing me off. Hard.
+
+#I barely even have a clue how this works. And good luck figuring out how
 func _physics_process(_delta):
 	if $Player in $Area2D3.get_overlapping_bodies():
 		if inzone == false and camerashifted == false:
-			$Camera2D.position.y -= 100
+			$Camera2D.position.y -= 648
+			$Player.position.y -= 45
 			inzone = true
 			camerashifted = true
 		if inzone == true:
@@ -19,7 +21,8 @@ func _physics_process(_delta):
 	if $Player in $Area2D3.get_overlapping_bodies() and inzone:
 		camerashifted = false
 	if $Player in $Area2D3.get_overlapping_bodies() and justleft == true:
-		$Camera2D.position.y +=100
+		$Camera2D.position.y +=648
+		$Player.position.y +=45
 		justleft = false
 	if $Player not in $Area2D3.get_overlapping_bodies() and justleft == false:
 		inzone = false
