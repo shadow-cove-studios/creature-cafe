@@ -16,8 +16,10 @@ var justleft_right = false
 #I barely even have a clue how this works. And good luck figuring out how.
 func _physics_process(_delta):
 	
-	##One more time. Before changing this, remember
-	##              ##If it works, DON'T CHANGE IT##
+	if Input.is_action_just_pressed("random input"):
+		print(RecipeBook.baked_cod)
+				##Before changing this, remember
+				##If it works, DON'T CHANGE IT!!
 	if $Player in $Area2D3.get_overlapping_bodies() and camerashifted_left == false and camerashifted_right == false:
 		if inzone_top == false and camerashifted_top == false:
 			$Camera2D.position.y -= 648

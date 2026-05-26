@@ -9,7 +9,7 @@ extends CharacterBody2D
 
 ## prototypeBuild
 
-@export var walkSpeed = 230 #self exlpanitory, the speed of wich the character walks.
+@export var walkSpeed = 230 #self explanitory, the speed of wich the character walks.
 
 ## These player stat variables can be accessed by other scrips using $Player.hitpoints, or using
 ## get_node(directory/to/player).hitpoints, for example.
@@ -21,7 +21,8 @@ func get_input():#this functiun recives input and changes the character's veloci
 	var input_direction = Input.get_vector("left", "right", "up", "down") ##This variable recives the input of the keyboard,
 	velocity = input_direction * walkSpeed
 
-func _physics_process(_delta): #this function actually makes your guy move :)
+func _physics_process(_delta): #this function actually makes your guy move :
+	''
 	get_input()
 	move_and_slide()
 	if hitpoints<=0:
