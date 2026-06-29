@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://bok13paljvmbu"]
 
-[ext_resource type="PackedScene" uid="uid://ch0y5hvn63ppe" path="res://scenes/asset scenes/menuPlayer.tscn" id="1_lcoft"]
-[ext_resource type="Script" uid="uid://b5ajq7lo777fi" path="res://InterMenuScript.gd" id="1_p2dom"]
+[ext_resource type="PackedScene" uid="uid://ch0y5hvn63ppe" path="res://scenes/things/menuPlayer.tscn" id="1_lcoft"]
+[ext_resource type="Script" uid="uid://b5ajq7lo777fi" path="res://scripts/InterMenuScript.gd" id="1_p2dom"]
 [ext_resource type="Texture2D" uid="uid://bgdginlfklhip" path="res://sprites/buttonLong_brown.png" id="2_p2dom"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ftnnm"]
@@ -98,6 +98,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(576, 324)
+zoom = Vector2(0.75, 0.75)
 
 [node name="Area2D3" type="Area2D" parent="."]
 

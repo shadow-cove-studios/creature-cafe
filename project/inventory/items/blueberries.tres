@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://bbf37dq73sa1y"]
+
+[ext_resource type="Script" uid="uid://c43bqefd8yl2w" path="res://scripts/inventory_item.gd" id="1_fgav3"]
+[ext_resource type="Texture2D" uid="uid://dv57ua6nfgsa8" path="res://sprites/New Piskel(8).png" id="2_aj3qu"]
+
+[resource]
+script = ExtResource("1_fgav3")
+name = "Blueberries"
+texture = ExtResource("2_aj3qu")
+metadata/_custom_type_script = "uid://c43bqefd8yl2w"

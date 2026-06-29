@@ -6,16 +6,18 @@ extends CharacterBody2D
 ##
 ## original tutorial:              https://www.youtube.com/watch?v=KceMokK2qFA
 ## Commenter that i copied from:   marcosmachado6844
-
 ## prototypeBuild
 
-@export var walkSpeed = 230 #self explanitory, the speed of wich the character walks.
+@export var inventory: Inventory
 
+var walkSpeed = 230 #self explanitory, the speed of wich the character walks.
 ## These player stat variables can be accessed by other scrips using $Player.hitpoints, or using
 ## get_node(directory/to/player).hitpoints, for example.
 var hitpoints: int  = 20
 var mana: int = 20
 var hunger: int = 20
+
+@onready var loader_area = $Area2D
 
 func get_input():#this functiun recives input and changes the character's velocity in effect
 	var input_direction = Input.get_vector("left", "right", "up", "down") ##This variable recives the input of the keyboard,

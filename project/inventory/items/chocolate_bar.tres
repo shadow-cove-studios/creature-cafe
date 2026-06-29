@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://dhnsg4f7fxtqn"]
+
+[ext_resource type="Script" uid="uid://c43bqefd8yl2w" path="res://scripts/inventory_item.gd" id="1_6a6gh"]
+[ext_resource type="Texture2D" uid="uid://c63p4f2a72o4x" path="res://sprites/New Piskel(6).png" id="2_513i3"]
+
+[resource]
+script = ExtResource("1_6a6gh")
+name = "Chocolate bar"
+texture = ExtResource("2_513i3")
+metadata/_custom_type_script = "uid://c43bqefd8yl2w"

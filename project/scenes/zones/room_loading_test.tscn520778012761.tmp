@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://b8f48jj1d8un8"]
+
+[ext_resource type="Script" uid="uid://bwgrn5vci6sl3" path="res://scenes/zones/room_loading_test_script.gd" id="1_3v8pt"]
+[ext_resource type="PackedScene" uid="uid://dnfi0qtr534uq" path="res://scenes/assets/chefie.tscn" id="1_7qq3m"]
+[ext_resource type="PackedScene" uid="uid://bfxegk7lr3pq" path="res://scenes/rooms/testroom1.tscn" id="3_2havn"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_3v8pt")
+
+[node name="Player" parent="." instance=ExtResource("1_7qq3m")]
+position = Vector2(550, 297)
+
+[node name="room" parent="." instance=ExtResource("3_2havn")]
+position = Vector2(245, 306)
+
+[node name="room2" parent="." instance=ExtResource("3_2havn")]
+position = Vector2(843, 323)

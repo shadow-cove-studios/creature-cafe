@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://c1wkxrnpwduai"]
+
+[ext_resource type="Script" uid="uid://c43bqefd8yl2w" path="res://scripts/inventory_item.gd" id="1_6jwtw"]
+[ext_resource type="Texture2D" uid="uid://c3ppphqm44wf7" path="res://sprites/New Piskel(4).png" id="2_nk701"]
+
+[resource]
+script = ExtResource("1_6jwtw")
+name = "Lacosian spice mix"
+texture = ExtResource("2_nk701")
+metadata/_custom_type_script = "uid://c43bqefd8yl2w"
