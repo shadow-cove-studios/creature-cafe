@@ -52,3 +52,7 @@ You've stumbled upon a place far far away.
 		   @--@..........................................@--@+++++++++++@-@------------@            
 		   @--********************************************--@+++++++++++@-@############@            
 		   @++++++++++++++++++++++++++++++++++++++++++++++++@###########@+@       
+This isn't documentation or anything. Just a schizo-ranting document to write crap in
+when you're tired of all of this.
+
+We're gonna obfuscate this in full release, right? Or is someone reading this right now?

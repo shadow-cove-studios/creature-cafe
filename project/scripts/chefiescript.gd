@@ -29,6 +29,6 @@ func _physics_process(_delta): #this function actually makes your guy move :
 	move_and_slide()
 	if hitpoints<=0:
 		get_tree().change_scene_to_file("res://scenes/menus/menu.tscn")
-		
-	
-	
+
+func collect(item):
+	inventory.insert(item)
