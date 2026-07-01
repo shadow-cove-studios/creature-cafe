@@ -2,7 +2,7 @@ extends Control
 
 var is_open = false
 @onready var inv: Inventory = preload("res://inventory/inventories/player_inventory.tres")
-@onready var slots: Array = $NinePatchRect/GridContainer.get_children()
+@onready var slots: Array = $NinePatchRect/ScrollContainer/VBoxContainer.get_children()
 
 func _ready():
 	inv.update.connect(update_slots)

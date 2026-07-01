@@ -14,81 +14,84 @@ script = ExtResource("1_cedrj")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 layout_mode = 0
-offset_right = 142.0
-offset_bottom = 61.0
+offset_right = 70.0
+offset_bottom = 182.0
 texture = ExtResource("2_7rvkw")
 patch_margin_left = 6
 patch_margin_top = 6
 patch_margin_right = 6
 patch_margin_bottom = 6
 
-[node name="GridContainer" type="GridContainer" parent="NinePatchRect"]
+[node name="ScrollContainer" type="ScrollContainer" parent="NinePatchRect"]
 layout_mode = 0
 offset_left = 3.0
-offset_top = 2.0
-offset_right = 139.0
-offset_bottom = 78.0
-columns = 7
+offset_top = 3.0
+offset_right = 66.975
+offset_bottom = 179.0
+vertical_scroll_mode = 3
 
-[node name="inventory_ui_slot" parent="NinePatchRect/GridContainer" instance=ExtResource("3_45d2x")]
+[node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect/ScrollContainer"]
 layout_mode = 2
 
-[node name="inventory_ui_slot2" parent="NinePatchRect/GridContainer" instance=ExtResource("3_45d2x")]
+[node name="inventory_ui_slot" parent="NinePatchRect/ScrollContainer/VBoxContainer" instance=ExtResource("3_45d2x")]
 layout_mode = 2
 
-[node name="inventory_ui_slot3" parent="NinePatchRect/GridContainer" instance=ExtResource("3_45d2x")]
+[node name="inventory_ui_slot2" parent="NinePatchRect/ScrollContainer/VBoxContainer" instance=ExtResource("3_45d2x")]
 layout_mode = 2
 
-[node name="inventory_ui_slot4" parent="NinePatchRect/GridContainer" instance=ExtResource("3_45d2x")]
+[node name="inventory_ui_slot3" parent="NinePatchRect/ScrollContainer/VBoxContainer" instance=ExtResource("3_45d2x")]
 layout_mode = 2
 
-[node name="inventory_ui_slot5" parent="NinePatchRect/GridContainer" instance=ExtResource("3_45d2x")]
+[node name="inventory_ui_slot4" parent="NinePatchRect/ScrollContainer/VBoxContainer" instance=ExtResource("3_45d2x")]
 layout_mode = 2
 
-[node name="inventory_ui_slot6" parent="NinePatchRect/GridContainer" instance=ExtResource("3_45d2x")]
+[node name="inventory_ui_slot5" parent="NinePatchRect/ScrollContainer/VBoxContainer" instance=ExtResource("3_45d2x")]
 layout_mode = 2
 
-[node name="inventory_ui_slot7" parent="NinePatchRect/GridContainer" instance=ExtResource("3_45d2x")]
+[node name="inventory_ui_slot6" parent="NinePatchRect/ScrollContainer/VBoxContainer" instance=ExtResource("3_45d2x")]
 layout_mode = 2
 
-[node name="inventory_ui_slot8" parent="NinePatchRect/GridContainer" instance=ExtResource("3_45d2x")]
+[node name="inventory_ui_slot7" parent="NinePatchRect/ScrollContainer/VBoxContainer" instance=ExtResource("3_45d2x")]
 layout_mode = 2
 
-[node name="inventory_ui_slot9" parent="NinePatchRect/GridContainer" instance=ExtResource("3_45d2x")]
+[node name="inventory_ui_slot8" parent="NinePatchRect/ScrollContainer/VBoxContainer" instance=ExtResource("3_45d2x")]
 layout_mode = 2
 
-[node name="inventory_ui_slot10" parent="NinePatchRect/GridContainer" instance=ExtResource("3_45d2x")]
+[node name="inventory_ui_slot9" parent="NinePatchRect/ScrollContainer/VBoxContainer" instance=ExtResource("3_45d2x")]
 layout_mode = 2
 
-[node name="inventory_ui_slot11" parent="NinePatchRect/GridContainer" instance=ExtResource("3_45d2x")]
+[node name="inventory_ui_slot10" parent="NinePatchRect/ScrollContainer/VBoxContainer" instance=ExtResource("3_45d2x")]
 layout_mode = 2
 
-[node name="inventory_ui_slot12" parent="NinePatchRect/GridContainer" instance=ExtResource("3_45d2x")]
+[node name="inventory_ui_slot11" parent="NinePatchRect/ScrollContainer/VBoxContainer" instance=ExtResource("3_45d2x")]
 layout_mode = 2
 
-[node name="inventory_ui_slot13" parent="NinePatchRect/GridContainer" instance=ExtResource("3_45d2x")]
+[node name="inventory_ui_slot12" parent="NinePatchRect/ScrollContainer/VBoxContainer" instance=ExtResource("3_45d2x")]
 layout_mode = 2
 
-[node name="inventory_ui_slot14" parent="NinePatchRect/GridContainer" instance=ExtResource("3_45d2x")]
+[node name="inventory_ui_slot13" parent="NinePatchRect/ScrollContainer/VBoxContainer" instance=ExtResource("3_45d2x")]
 layout_mode = 2
 
-[node name="inventory_ui_slot15" parent="NinePatchRect/GridContainer" instance=ExtResource("3_45d2x")]
+[node name="inventory_ui_slot14" parent="NinePatchRect/ScrollContainer/VBoxContainer" instance=ExtResource("3_45d2x")]
 layout_mode = 2
 
-[node name="inventory_ui_slot16" parent="NinePatchRect/GridContainer" instance=ExtResource("3_45d2x")]
+[node name="inventory_ui_slot15" parent="NinePatchRect/ScrollContainer/VBoxContainer" instance=ExtResource("3_45d2x")]
 layout_mode = 2
 
-[node name="inventory_ui_slot17" parent="NinePatchRect/GridContainer" instance=ExtResource("3_45d2x")]
+[node name="inventory_ui_slot16" parent="NinePatchRect/ScrollContainer/VBoxContainer" instance=ExtResource("3_45d2x")]
 layout_mode = 2
 
-[node name="inventory_ui_slot18" parent="NinePatchRect/GridContainer" instance=ExtResource("3_45d2x")]
+[node name="inventory_ui_slot17" parent="NinePatchRect/ScrollContainer/VBoxContainer" instance=ExtResource("3_45d2x")]
 layout_mode = 2
 
-[node name="inventory_ui_slot19" parent="NinePatchRect/GridContainer" instance=ExtResource("3_45d2x")]
+[node name="inventory_ui_slot18" parent="NinePatchRect/ScrollContainer/VBoxContainer" instance=ExtResource("3_45d2x")]
 layout_mode = 2
 
-[node name="inventory_ui_slot20" parent="NinePatchRect/GridContainer" instance=ExtResource("3_45d2x")]
+[node name="inventory_ui_slot19" parent="NinePatchRect/ScrollContainer/VBoxContainer" instance=ExtResource("3_45d2x")]
 layout_mode = 2
 
-[node name="inventory_ui_slot21" parent="NinePatchRect/GridContainer" instance=ExtResource("3_45d2x")]
+[node name="inventory_ui_slot20" parent="NinePatchRect/ScrollContainer/VBoxContainer" instance=ExtResource("3_45d2x")]
+layout_mode = 2
+
+[node name="inventory_ui_slot21" parent="NinePatchRect/ScrollContainer/VBoxContainer" instance=ExtResource("3_45d2x")]
 layout_mode = 2
