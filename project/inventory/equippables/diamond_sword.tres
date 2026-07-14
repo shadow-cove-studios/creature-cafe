@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="EquippableItem" load_steps=3 format=3 uid="uid://68jhj2yk406t"]
+
+[ext_resource type="Script" uid="uid://c8tat24ck33cw" path="res://scripts/equippable_item.gd" id="1_swp28"]
+[ext_resource type="Texture2D" uid="uid://dpa3smd6knjuj" path="res://sprites/CheffieTestSword1(1).png" id="2_vudou"]
+
+[resource]
+script = ExtResource("1_swp28")
+name = "Chefie's diamond sword"
+texture = ExtResource("2_vudou")
+metadata/_custom_type_script = "uid://c8tat24ck33cw"

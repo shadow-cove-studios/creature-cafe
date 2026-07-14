@@ -7,3 +7,4 @@ class_name Interior2D
 func _physics_process(delta):
 	if room1.RoomArea.overlaps_area(player.loader_area):
 		pass
+		

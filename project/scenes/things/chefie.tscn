@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://dnfi0qtr534uq"]
+[gd_scene load_steps=8 format=3 uid="uid://dnfi0qtr534uq"]
 
 [ext_resource type="Script" uid="uid://dx4oplrop3b1j" path="res://scripts/chefiescript.gd" id="1_jkh2t"]
 [ext_resource type="Texture2D" uid="uid://cpa8bhp2nyt6p" path="res://sprites/godot.png" id="1_wf5iw"]
 [ext_resource type="Resource" uid="uid://br6fksdaccvwk" path="res://inventory/inventories/player_inventory.tres" id="2_bs43u"]
 [ext_resource type="PackedScene" uid="uid://mcugk46f7kb0" path="res://inventory/inventory_ui.tscn" id="4_0h5hd"]
+[ext_resource type="PackedScene" uid="uid://4q1kmacnhvrk" path="res://scenes/UI/hotbar.tscn" id="4_nb8yf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gu2jr"]
 size = Vector2(25, 25)
@@ -19,15 +20,22 @@ inventory = ExtResource("2_bs43u")
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-3.8147e-05, 3.8147e-06)
 zoom = Vector2(3.5, 3.5)
-limit_smoothed = true
 position_smoothing_enabled = true
 position_smoothing_speed = 3.5
+
+[node name="Control" parent="Camera2D" instance=ExtResource("4_nb8yf")]
+offset_left = -164.0
+offset_top = 52.0
+offset_right = -164.0
+offset_bottom = 52.0
 
 [node name="InventoryUI" parent="Camera2D" instance=ExtResource("4_0h5hd")]
 offset_left = -164.0
 offset_top = -92.0
 offset_right = -22.0
 offset_bottom = -31.0
+
+[node name="Hotbarholder" type="CanvasLayer" parent="Camera2D"]
 
 [node name="Godot" type="Sprite2D" parent="."]
 texture = ExtResource("1_wf5iw")

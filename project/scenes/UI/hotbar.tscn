@@ -1,0 +1,89 @@
+[gd_scene load_steps=10 format=3 uid="uid://4q1kmacnhvrk"]
+
+[ext_resource type="Script" uid="uid://7atwb62kr4bp" path="res://scripts/hotbar.gd" id="1_3lmyj"]
+[ext_resource type="Texture2D" uid="uid://b0knelg1dbp4h" path="res://sprites/hotbar_background.png" id="1_17b1v"]
+[ext_resource type="Texture2D" uid="uid://b4bidht4sk81s" path="res://sprites/New Piskel(10).png" id="2_od12x"]
+[ext_resource type="Script" uid="uid://c8tat24ck33cw" path="res://scripts/equippable_item.gd" id="2_uffs8"]
+[ext_resource type="Resource" uid="uid://68jhj2yk406t" path="res://inventory/equippables/diamond_sword.tres" id="3_ag1do"]
+
+[sub_resource type="Resource" id="Resource_uffs8"]
+script = ExtResource("2_uffs8")
+name = ""
+metadata/_custom_type_script = "uid://c8tat24ck33cw"
+
+[sub_resource type="Resource" id="Resource_7n5ns"]
+script = ExtResource("2_uffs8")
+name = ""
+metadata/_custom_type_script = "uid://c8tat24ck33cw"
+
+[sub_resource type="Resource" id="Resource_vrqlx"]
+script = ExtResource("2_uffs8")
+name = ""
+metadata/_custom_type_script = "uid://c8tat24ck33cw"
+
+[sub_resource type="Resource" id="Resource_5i72v"]
+script = ExtResource("2_uffs8")
+name = ""
+metadata/_custom_type_script = "uid://c8tat24ck33cw"
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3lmyj")
+items = Array[ExtResource("2_uffs8")]([ExtResource("3_ag1do"), SubResource("Resource_uffs8"), ExtResource("3_ag1do"), SubResource("Resource_7n5ns"), SubResource("Resource_vrqlx"), SubResource("Resource_5i72v")])
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(112, 20)
+texture = ExtResource("1_17b1v")
+
+[node name="Slot1" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(-92, 0)
+texture = ExtResource("2_od12x")
+
+[node name="Slot2" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(92, 0)
+texture = ExtResource("2_od12x")
+
+[node name="Slot3" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(56, 0)
+texture = ExtResource("2_od12x")
+
+[node name="Slot4" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(19, 0)
+texture = ExtResource("2_od12x")
+
+[node name="Slot5" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(-18, 0)
+texture = ExtResource("2_od12x")
+
+[node name="Slot6" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(-55, 0)
+texture = ExtResource("2_od12x")
+
+[node name="displays" type="Control" parent="Sprite2D"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="display1" type="Sprite2D" parent="Sprite2D/displays"]
+position = Vector2(-92, 0)
+
+[node name="display2" type="Sprite2D" parent="Sprite2D/displays"]
+position = Vector2(-55, 0)
+
+[node name="display3" type="Sprite2D" parent="Sprite2D/displays"]
+position = Vector2(-18, 0)
+
+[node name="display4" type="Sprite2D" parent="Sprite2D/displays"]
+position = Vector2(19, 0)
+
+[node name="display5" type="Sprite2D" parent="Sprite2D/displays"]
+position = Vector2(56, 0)
+
+[node name="display6" type="Sprite2D" parent="Sprite2D/displays"]
+position = Vector2(92, 0)

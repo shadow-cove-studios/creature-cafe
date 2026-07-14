@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="EquippableItem" load_steps=3 format=3 uid="uid://cjvlwy0i48nk6"]
+
+[ext_resource type="Script" uid="uid://c8tat24ck33cw" path="res://scripts/equippable_item.gd" id="1_5rq4b"]
+[ext_resource type="Texture2D" uid="uid://bpe7cd7o0tqt8" path="res://sprites/New Piskel(11).png" id="2_fr6hy"]
+
+[resource]
+script = ExtResource("1_5rq4b")
+name = "Da strap"
+texture = ExtResource("2_fr6hy")
+metadata/_custom_type_script = "uid://c8tat24ck33cw"
