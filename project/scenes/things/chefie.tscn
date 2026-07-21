@@ -23,7 +23,7 @@ zoom = Vector2(3.5, 3.5)
 position_smoothing_enabled = true
 position_smoothing_speed = 3.5
 
-[node name="Control" parent="Camera2D" instance=ExtResource("4_nb8yf")]
+[node name="HotbarUI" parent="Camera2D" instance=ExtResource("4_nb8yf")]
 offset_left = -164.0
 offset_top = 52.0
 offset_right = -164.0
@@ -34,8 +34,6 @@ offset_left = -164.0
 offset_top = -92.0
 offset_right = -22.0
 offset_bottom = -31.0
-
-[node name="Hotbarholder" type="CanvasLayer" parent="Camera2D"]
 
 [node name="Godot" type="Sprite2D" parent="."]
 texture = ExtResource("1_wf5iw")
@@ -48,3 +46,6 @@ visible = false
 
 [node name="LoaderShape" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_vsh8i")
+
+[node name="HeldItemDisplay" type="Sprite2D" parent="."]
+position = Vector2(22, 0)
