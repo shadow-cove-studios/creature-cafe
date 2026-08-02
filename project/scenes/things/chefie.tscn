@@ -58,7 +58,7 @@ position = Vector2(22, 0)
 script = ExtResource("6_ia5be")
 
 [node name="SlashBox" type="CollisionShape2D" parent="SlashArea"]
-position = Vector2(28.75, 0)
+position = Vector2(34, 0)
 shape = SubResource("RectangleShape2D_nb8yf")
 
 [connection signal="area_entered" from="SlashArea" to="SlashArea" method="_on_area_entered"]

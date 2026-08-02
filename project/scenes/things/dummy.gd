@@ -10,7 +10,6 @@ func _ready():
  
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	print(health)
 	if at_target_1 == false:
 		global_position = global_position.move_toward(target_1, 0.5)
 	else:
@@ -21,8 +20,8 @@ func _process(delta):
 		at_target_1 = false
 	if health == 0 or health < 0:
 		die()
-func change_health(amount: int):
-	health = health + amount
+func take_damage(amount: int):
+	health = health - amount
 func die():
 	$Hitbox.area_exited
 	queue_free()

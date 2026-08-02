@@ -21,4 +21,4 @@ position = Vector2(843, 323)
 position = Vector2(819, 324)
 
 [node name="Dummy2" parent="." instance=ExtResource("4_st7lj")]
-position = Vector2(819, 358)
+position = Vector2(820, 287)
