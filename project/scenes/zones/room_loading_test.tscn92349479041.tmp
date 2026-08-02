@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://b8f48jj1d8un8"]
+[gd_scene load_steps=4 format=3 uid="uid://b8f48jj1d8un8"]
 
 [ext_resource type="Script" uid="uid://bwgrn5vci6sl3" path="res://scenes/zones/room_loading_test_script.gd" id="1_3v8pt"]
 [ext_resource type="PackedScene" uid="uid://dnfi0qtr534uq" path="res://scenes/things/chefie.tscn" id="1_7qq3m"]
 [ext_resource type="PackedScene" uid="uid://bfxegk7lr3pq" path="res://scenes/rooms/testroom1.tscn" id="3_2havn"]
-[ext_resource type="PackedScene" uid="uid://ddoxqd4x1yed7" path="res://scenes/things/dummy.tscn" id="4_st7lj"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_3v8pt")
@@ -16,9 +15,3 @@ position = Vector2(245, 306)
 
 [node name="room2" parent="." instance=ExtResource("3_2havn")]
 position = Vector2(843, 323)
-
-[node name="Dummy" parent="." instance=ExtResource("4_st7lj")]
-position = Vector2(819, 324)
-
-[node name="Dummy2" parent="." instance=ExtResource("4_st7lj")]
-position = Vector2(819, 358)

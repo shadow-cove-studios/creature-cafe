@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://ddoxqd4x1yed7"]
+
+[ext_resource type="Script" uid="uid://bfarue66c3a58" path="res://scenes/things/dummy.gd" id="1_425q4"]
+[ext_resource type="Texture2D" uid="uid://cpa8bhp2nyt6p" path="res://sprites/godot.png" id="1_h75oq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_425q4"]
+size = Vector2(32, 32)
+
+[node name="Dummy" type="Node2D" groups=["Damageable"]]
+script = ExtResource("1_425q4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_h75oq")
+
+[node name="ColorRect" type="ColorRect" parent="Sprite2D"]
+offset_left = -12.0
+offset_top = -9.0
+offset_right = 12.0
+offset_bottom = 12.0
+color = Color(1, 0, 0, 0.364706)
+
+[node name="Hitbox" type="Area2D" parent="." groups=["Damageable"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource("RectangleShape2D_425q4")

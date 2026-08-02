@@ -5,11 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://b4bidht4sk81s" path="res://sprites/New Piskel(10).png" id="2_od12x"]
 [ext_resource type="Script" uid="uid://c8tat24ck33cw" path="res://scripts/equippable_item.gd" id="2_uffs8"]
 [ext_resource type="Resource" uid="uid://68jhj2yk406t" path="res://inventory/equippables/diamond_sword.tres" id="3_ag1do"]
-
-[sub_resource type="Resource" id="Resource_uffs8"]
-script = ExtResource("2_uffs8")
-name = ""
-metadata/_custom_type_script = "uid://c8tat24ck33cw"
+[ext_resource type="Resource" uid="uid://cjvlwy0i48nk6" path="res://inventory/equippables/the_strap.tres" id="4_ag1do"]
 
 [sub_resource type="Resource" id="Resource_7n5ns"]
 script = ExtResource("2_uffs8")
@@ -34,7 +30,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_3lmyj")
-items = Array[ExtResource("2_uffs8")]([ExtResource("3_ag1do"), SubResource("Resource_uffs8"), ExtResource("3_ag1do"), SubResource("Resource_7n5ns"), SubResource("Resource_vrqlx"), SubResource("Resource_5i72v")])
+items = Array[ExtResource("2_uffs8")]([ExtResource("3_ag1do"), ExtResource("4_ag1do"), ExtResource("3_ag1do"), SubResource("Resource_7n5ns"), SubResource("Resource_vrqlx"), SubResource("Resource_5i72v")])
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(112, 20)

@@ -1,16 +1,20 @@
-[gd_scene load_steps=8 format=3 uid="uid://dnfi0qtr534uq"]
+[gd_scene load_steps=10 format=3 uid="uid://dnfi0qtr534uq"]
 
 [ext_resource type="Script" uid="uid://dx4oplrop3b1j" path="res://scripts/chefiescript.gd" id="1_jkh2t"]
 [ext_resource type="Texture2D" uid="uid://cpa8bhp2nyt6p" path="res://sprites/godot.png" id="1_wf5iw"]
 [ext_resource type="Resource" uid="uid://br6fksdaccvwk" path="res://inventory/inventories/player_inventory.tres" id="2_bs43u"]
 [ext_resource type="PackedScene" uid="uid://mcugk46f7kb0" path="res://inventory/inventory_ui.tscn" id="4_0h5hd"]
 [ext_resource type="PackedScene" uid="uid://4q1kmacnhvrk" path="res://scenes/UI/hotbar.tscn" id="4_nb8yf"]
+[ext_resource type="Script" uid="uid://8250mu6ek0fu" path="res://scripts/slash_area.gd" id="6_ia5be"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gu2jr"]
 size = Vector2(25, 25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vsh8i"]
 size = Vector2(490, 326)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nb8yf"]
+size = Vector2(16.5, 46)
 
 [node name="Player" type="CharacterBody2D" groups=["teleportableObjects"]]
 z_index = 700
@@ -49,3 +53,13 @@ shape = SubResource("RectangleShape2D_vsh8i")
 
 [node name="HeldItemDisplay" type="Sprite2D" parent="."]
 position = Vector2(22, 0)
+
+[node name="SlashArea" type="Area2D" parent="."]
+script = ExtResource("6_ia5be")
+
+[node name="SlashBox" type="CollisionShape2D" parent="SlashArea"]
+position = Vector2(28.75, 0)
+shape = SubResource("RectangleShape2D_nb8yf")
+
+[connection signal="area_entered" from="SlashArea" to="SlashArea" method="_on_area_entered"]
+[connection signal="area_exited" from="SlashArea" to="SlashArea" method="_on_area_exited"]

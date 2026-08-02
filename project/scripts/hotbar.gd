@@ -79,3 +79,7 @@ func update_equipped_item():
 		else:
 			equipped_item = null
 			selected_slot = null
+
+func equipped_item_name():
+	if equipped_item!= null:
+		return equipped_item.name

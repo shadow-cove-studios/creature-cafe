@@ -12,6 +12,7 @@ extends CharacterBody2D
 @onready var loader_area = $Area2D
 @onready var held_item = $HeldItemDisplay
 
+
 var walkSpeed = 230 #self explanitory, the speed of wich the character walks.
 ## These player stat variables can be accessed by other scrips using $Player.hitpoints, or using
 ## get_node(directory/to/player).hitpoints, for example.

@@ -19,6 +19,3 @@ position = Vector2(843, 323)
 
 [node name="Dummy" parent="." instance=ExtResource("4_st7lj")]
 position = Vector2(819, 324)
-
-[node name="Dummy2" parent="." instance=ExtResource("4_st7lj")]
-position = Vector2(819, 358)
