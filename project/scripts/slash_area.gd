@@ -164,4 +164,4 @@ func _apply_damage_to_targets(targets: Array, damage: int):
 		if targets[1].has_method("take_damage"):
 			targets[1].take_damage(damage)
 	else:
-		return
+		print("damn the game isn't supposed to have that many areas intersecting with the sword. Whoopsies.")
