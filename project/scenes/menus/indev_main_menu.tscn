@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://bvtjyantr55sg"]
+
+[node name="IndevMenu" type="Node2D"]
+
+[node name="Button" type="Button" parent="."]
+offset_left = 15.0
+offset_top = 165.0
+offset_right = 192.0
+offset_bottom = 222.0
+text = "Kitchen test"
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 16.0
+offset_top = 232.0
+offset_right = 193.0
+offset_bottom = 289.0
+text = "Interactive menu"
+
+[node name="Button3" type="Button" parent="."]
+offset_left = 16.0
+offset_top = 296.0
+offset_right = 193.0
+offset_bottom = 353.0
+text = "Player test"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 384.0
+offset_right = 721.0
+offset_bottom = 55.0
+theme_override_font_sizes/font_size = 40
+text = "Indev main menu"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 504.0
+offset_top = 72.0
+offset_right = 623.0
+offset_bottom = 100.0
+theme_override_font_sizes/font_size = 20
+text = "Select scene"
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 448.0
+offset_top = 312.0
+offset_right = 670.0
+offset_bottom = 361.0
+text = "Here's a bunch of extra space
+for later added scenes"

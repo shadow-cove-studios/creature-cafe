@@ -1,0 +1,72 @@
+[gd_scene load_steps=5 format=3 uid="uid://bdub0hdyormef"]
+
+[ext_resource type="Texture2D" uid="uid://x2s2tyrin883" path="res://sprites/top-view-above-empty-office-wooden-table-top-view-above-empty-office-wooden-table-plastic-chairs-hardwood-132138420.webp" id="1_6qsdo"]
+[ext_resource type="Script" uid="uid://3vus3h3tw0g7" path="res://cooking/appliances/prep_table.gd" id="1_jp58f"]
+[ext_resource type="PackedScene" uid="uid://dn1td3sx6eumf" path="res://cooking/cooking_object.tscn" id="2_8g0jo"]
+[ext_resource type="PackedScene" uid="uid://dfjltxhdvybdl" path="res://cooking/cooking_objects/red_ingredient.tscn" id="3_tfwcu"]
+
+[node name="PrepTable" type="Node2D"]
+script = ExtResource("1_jp58f")
+
+[node name="Top-view-above-empty-office-wooden-table-top-view-above-empty-office-wooden-table-plastic-chairs-hardwood-132138420" type="Sprite2D" parent="."]
+position = Vector2(578, 324)
+scale = Vector2(1.445, 1.32245)
+texture = ExtResource("1_6qsdo")
+
+[node name="CookingObject" parent="." instance=ExtResource("2_8g0jo")]
+z_index = 1
+position = Vector2(232, 232)
+
+[node name="CookingObject2" parent="." instance=ExtResource("3_tfwcu")]
+position = Vector2(312, 240)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 112.0
+offset_bottom = 648.0
+color = Color(0.817755, 0.526991, 0.204107, 1)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 16.0
+offset_top = 8.0
+offset_right = 99.0
+offset_bottom = 44.0
+theme_override_font_sizes/font_size = 26
+text = "Pantry"
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = 32.0
+offset_top = 144.0
+offset_right = 72.0
+offset_bottom = 184.0
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+offset_left = 32.0
+offset_top = 208.0
+offset_right = 72.0
+offset_bottom = 248.0
+
+[node name="Button" type="Button" parent="ColorRect3"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect4" type="ColorRect" parent="."]
+offset_left = 32.0
+offset_top = 272.0
+offset_right = 72.0
+offset_bottom = 312.0
+color = Color(1, 0, 0, 1)
+
+[node name="Button" type="Button" parent="ColorRect4"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect5" type="ColorRect" parent="."]
+offset_left = 32.0
+offset_top = 336.0
+offset_right = 72.0
+offset_bottom = 376.0
+
+[connection signal="pressed" from="ColorRect3/Button" to="." method="_on_whitebutton_pressed"]
+[connection signal="pressed" from="ColorRect4/Button" to="." method="_on_button_pressed"]

@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dfjltxhdvybdl"]
+
+[ext_resource type="Texture2D" uid="uid://dx416pcblg31c" path="res://sprites/red_CO_spirte.png" id="1_o2bgk"]
+[ext_resource type="Script" uid="uid://ddrt4wrs6px47" path="res://cooking/cooking_object.gd" id="2_nqwb1"]
+[ext_resource type="Resource" uid="uid://cm18epso21l8i" path="res://cooking/cooking_object_resources/red_ingredient.tres" id="3_ts15w"]
+
+[node name="CookingObject" type="Sprite2D"]
+texture = ExtResource("1_o2bgk")
+script = ExtResource("2_nqwb1")
+resource = ExtResource("3_ts15w")
+
+[node name="Button" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+z_index = 1
+offset_left = -24.0
+offset_top = -24.0
+offset_right = 24.0
+offset_bottom = 24.0
+
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
+[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]

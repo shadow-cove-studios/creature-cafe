@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="CookingObject" load_steps=2 format=3 uid="uid://cm18epso21l8i"]
+
+[ext_resource type="Script" uid="uid://c2oxqh5d05elb" path="res://cooking/CO_resource.gd" id="1_hoik5"]
+
+[resource]
+script = ExtResource("1_hoik5")
+color = Color(1, 0, 0, 1)
+context_menu_options = Array[String](["Cut", "Add to", "Put away"])
+metadata/_custom_type_script = "uid://c2oxqh5d05elb"
